@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Company Dashboard - ExperienceLink</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        primary: {
+                            50: '#f5f3ff',
+                            100: '#ede9fe',
+                            200: '#ddd6fe',
+                            300: '#c4b5fd',
+                            400: '#4169e1',
+                            500: '#8b5cf6',
+                            600: '#4169e1',
+                            700: '#002D72',
+                            800: '#5b21b6',
+                            900: '#2A4390',
+                        }
+                    },
+                    fontFamily: {
+                        'sans': ['Inter', 'system-ui', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="font-sans bg-gray-50 dark:bg-gray-900 transition-colors duration-300">
+    <!-- Navigation -->
+    <nav class="fixed top-0 left-0 right-0 bg-white dark:bg-gray-900 z-50 border-b border-gray-100 dark:border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <a href="index.html" class="text-xl font-bold text-primary-600">ExperienceLink</a>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="index.html" class="text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400">Home</a>
+                    <a href="projects.html" class="text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400">Projects</a>
+                    <a href="companies.html" class="text-gray-900 dark:text-white font-medium hover:text-primary-600 dark:hover:text-primary-400">Companies</a>
+                    <a href="about.html" class="text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400">About</a>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <button id="darkModeToggle" class="p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800">
+                        <svg class="w-5 h-5 text-gray-600 dark:text-gray-300 dark:hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"/>
+                        </svg>
+                        <svg class="w-5 h-5 text-gray-300 hidden dark:block" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"/>
+                        </svg>
+                    </button>
+                    <a href="login.html" class="text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 font-medium">Login</a>
+                    <a href="signup.html" class="bg-primary-600 hover:bg-primary-700 text-white px-5 py-2 rounded-lg font-medium transition-colors">Sign Up</a>
+                </div>
+                <button id="mobileMenuBtn" class="md:hidden p-2">
+                    <svg class="w-6 h-6 text-gray-600 dark:text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <div id="mobileMenu" class="hidden md:hidden bg-white dark:bg-gray-900 border-t border-gray-100 dark:border-gray-800">
+            <div class="px-4 py-3 space-y-3">
+                <a href="index.html" class="block text-gray-600 dark:text-gray-300">Home</a>
+                <a href="projects.html" class="block text-gray-600 dark:text-gray-300">Projects</a>
+                <a href="companies.html" class="block text-gray-900 dark:text-white font-medium">Companies</a>
+                <a href="about.html" class="block text-gray-600 dark:text-gray-300">About</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="pt-24 pb-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- Header -->
+            <div class="mb-8">
+                <h1 class="text-3xl font-bold text-gray-900 dark:text-white">Company Dashboard</h1>
+                <p class="text-gray-600 dark:text-gray-400 mt-2">Manage your projects and find talented students</p>
+            </div>
+
+            <!-- Tabs -->
+            <div class="mb-8">
+                <div class="flex space-x-1 bg-gray-100 dark:bg-gray-800 rounded-lg p-1 w-fit">
+                    <button id="tabActiveProjects" class="tab-btn px-4 py-2 rounded-md text-sm font-medium text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors">Active Projects</button>
+                    <button id="tabApplicants" class="tab-btn px-4 py-2 rounded-md text-sm font-medium text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors">Applicants</button>
+                    <button id="tabPostNew" class="tab-btn px-4 py-2 rounded-md text-sm font-medium bg-white dark:bg-gray-900 text-gray-900 dark:text-white shadow-sm">Post New Project</button>
+                </div>
+            </div>
+
+            <!-- Tab Content: Post New Project -->
+            <div id="contentPostNew" class="bg-white dark:bg-gray-800 rounded-xl p-8 shadow-sm border border-gray-100 dark:border-gray-700">
+                <div class="flex items-center gap-2 mb-6">
+                    <span class="text-primary-600 text-xl">+</span>
+                    <h2 class="text-xl font-semibold text-gray-900 dark:text-white">Post a New Project</h2>
+                </div>
+
+                <form class="space-y-6">
+                    <!-- Project Title -->
+                    <div>
+                        <label for="projectTitle" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Project Title</label>
+                        <input type="text" id="projectTitle" placeholder="e.g., Build a Landing Page Component" class="w-full px-4 py-3 border border-gray-200 dark:border-gray-700 rounded-lg bg-white dark:bg-gray-900 text-gray-900 dark:text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent">
+                    </div>
+
+                    <!-- Description -->
+                    <div>
+                        <label for="description" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Description</label>
+                        <textarea id="description" rows="5" placeholder="Describe the project, requirements, and expectations..." class="w-full px-4 py-3 border border-gray-200 dark:border-gray-700 rounded-lg bg-white dark:bg-gray-900 text-gray-900 dark:text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent resize-none"></textarea>
+                        <p class="text-sm text-gray-500 dark:text-gray-400 mt-1"><span id="charCount">0</span> characters</p>
+                    </div>
+
+                    <!-- Skills and Duration Row -->
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <!-- Required Skills -->
+                        <div>
+                            <label for="skills" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Required Skills</label>
+                            <input type="text" id="skills" placeholder="e.g., React, TypeScript, CSS" class="w-full px-4 py-3 border border-gray-200 dark:border-gray-700 rounded-lg bg-white dark:bg-gray-900 text-gray-900 dark:text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent">
+                        </div>
+
+                        <!-- Duration -->
+                        <div>
+                            <label for="duration" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Duration</label>
+                            <input type="text" id="duration" placeholder="e.g., 2 weeks" class="w-full px-4 py-3 border border-gray-200 dark:border-gray-700 rounded-lg bg-white dark:bg-gray-900 text-gray-900 dark:text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent">
+                        </div>
+                    </div>
+
+                    <!-- Reward/Credit -->
+                    <div>
+                        <label for="reward" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Reward/Credit</label>
+                        <input type="text" id="reward" placeholder="e.g., $200 or Course Credit" class="w-full px-4 py-3 border border-gray-200 dark:border-gray-700 rounded-lg bg-white dark:bg-gray-900 text-gray-900 dark:text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent">
+                    </div>
+
+                    <!-- Submit Button -->
+                    <button type="submit" class="bg-primary-600 hover:bg-primary-700 text-white px-6 py-3 rounded-lg font-medium transition-colors inline-flex items-center gap-2">
+                        <span>+</span>
+                        Post Project
+                    </button>
+                </form>
+            </div>
+
+            <!-- Tab Content: Active Projects (Hidden by default) -->
+            <div id="contentActiveProjects" class="hidden">
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <!-- Active Project Card 1 -->
+                    <div class="bg-white dark:bg-gray-800 rounded-xl p-6 shadow-sm border border-gray-100 dark:border-gray-700">
+                        <div class="flex justify-between items-start mb-4">
+                            <h3 class="font-semibold text-gray-900 dark:text-white">Landing Page Component</h3>
+                            <span class="px-2 py-1 bg-green-100 dark:bg-green-900 text-green-700 dark:text-green-300 rounded text-xs">Active</span>
+                        </div>
+                        <p class="text-gray-600 dark:text-gray-300 text-sm mb-4">Build a responsive landing page for our product launch...</p>
+                        <div class="flex items-center justify-between text-sm">
+                            <span class="text-gray-500 dark:text-gray-400">5 applicants</span>
+                            <button class="text-primary-600 hover:text-primary-700 font-medium">View Details</button>
+                        </div>
+                    </div>
+
+                    <!-- Active Project Card 2 -->
+                    <div class="bg-white dark:bg-gray-800 rounded-xl p-6 shadow-sm border border-gray-100 dark:border-gray-700">
+                        <div class="flex justify-between items-start mb-4">
+                            <h3 class="font-semibold text-gray-900 dark:text-white">Data Dashboard Design</h3>
+                            <span class="px-2 py-1 bg-grey-100 dark:bg-grey-900 text-grey-700 dark:text-grey-300 rounded text-xs">In Progress</span>
+                        </div>
+                        <p class="text-gray-600 dark:text-gray-300 text-sm mb-4">Design a data visualization dashboard for analytics...</p>
+                        <div class="flex items-center justify-between text-sm">
+                            <span class="text-gray-500 dark:text-gray-400">3 applicants</span>
+                            <button class="text-primary-600 hover:text-primary-700 font-medium">View Details</button>
+                        </div>
+                    </div>
+
+                    <!-- Active Project Card 3 -->
+                    <div class="bg-white dark:bg-gray-800 rounded-xl p-6 shadow-sm border border-gray-100 dark:border-gray-700">
+                        <div class="flex justify-between items-start mb-4">
+                            <h3 class="font-semibold text-gray-900 dark:text-white">API Integration</h3>
+                            <span class="px-2 py-1 bg-green-100 dark:bg-green-900 text-green-700 dark:text-green-300 rounded text-xs">Active</span>
+                        </div>
+                        <p class="text-gray-600 dark:text-gray-300 text-sm mb-4">Integrate third-party APIs into our platform...</p>
+                        <div class="flex items-center justify-between text-sm">
+                            <span class="text-gray-500 dark:text-gray-400">8 applicants</span>
+                            <button class="text-primary-600 hover:text-primary-700 font-medium">View Details</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tab Content: Applicants (Hidden by default) -->
+            <div id="contentApplicants" class="hidden">
+                <div class="bg-white dark:bg-gray-800 rounded-xl shadow-sm border border-gray-100 dark:border-gray-700 overflow-hidden">
+                    <table class="w-full">
+                        <thead class="bg-gray-50 dark:bg-gray-900">
+                            <tr>
+                                <th class="px-6 py-4 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider">Student</th>
+                                <th class="px-6 py-4 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider">Project</th>
+                                <th class="px-6 py-4 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider">Skills</th>
+                                <th class="px-6 py-4 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider">Status</th>
+                                <th class="px-6 py-4 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider">Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-gray-100 dark:divide-gray-700">
+                            <tr>
+                                <td class="px-6 py-4">
+                                    <div class="flex items-center">
+                                        <div class="w-10 h-10 bg-primary-100 dark:bg-primary-900 rounded-full flex items-center justify-center">
+                                            <span class="text-primary-600 font-semibold">JD</span>
+                                        </div>
+                                        <div class="ml-4">
+                                            <div class="text-sm font-medium text-gray-900 dark:text-white">Jane Doe</div>
+                                            <div class="text-sm text-gray-500 dark:text-gray-400">Stanford University</div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="px-6 py-4 text-sm text-gray-900 dark:text-white">Landing Page Component</td>
+                                <td class="px-6 py-4">
+                                    <div class="flex gap-1">
+                                        <span class="px-2 py-1 bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded text-xs">React</span>
+                                        <span class="px-2 py-1 bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded text-xs">CSS</span>
+                                    </div>
+                                </td>
+                                <td class="px-6 py-4">
+                                    <span class="px-2 py-1 bg-grey-100 dark:bg-gray-900 text-gray-700 dark:text-gray-300 rounded text-xs">Pending</span>
+                                </td>
+                                <td class="px-6 py-4">
+                                    <button class="text-primary-600 hover:text-primary-700 text-sm font-medium mr-3">View Profile</button>
+                                    <button class="text-green-600 hover:text-green-700 text-sm font-medium">Accept</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="px-6 py-4">
+                                    <div class="flex items-center">
+                                        <div class="w-10 h-10 bg-blue-100 dark:bg-blue-900 rounded-full flex items-center justify-center">
+                                            <span class="text-blue-600 font-semibold">MS</span>
+                                        </div>
+                                        <div class="ml-4">
+                                            <div class="text-sm font-medium text-gray-900 dark:text-white">Mike Smith</div>
+                                            <div class="text-sm text-gray-500 dark:text-gray-400">MIT</div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="px-6 py-4 text-sm text-gray-900 dark:text-white">Data Dashboard Design</td>
+                                <td class="px-6 py-4">
+                                    <div class="flex gap-1">
+                                        <span class="px-2 py-1 bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded text-xs">Figma</span>
+                                        <span class="px-2 py-1 bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded text-xs">UI/UX</span>
+                                    </div>
+                                </td>
+                                <td class="px-6 py-4">
+                                    <span class="px-2 py-1 bg-green-100 dark:bg-green-900 text-green-700 dark:text-green-300 rounded text-xs">Accepted</span>
+                                </td>
+                                <td class="px-6 py-4">
+                                    <button class="text-primary-600 hover:text-primary-700 text-sm font-medium mr-3">View Profile</button>
+                                    <button class="text-gray-400 text-sm font-medium cursor-not-allowed">Accept</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="px-6 py-4">
+                                    <div class="flex items-center">
+                                        <div class="w-10 h-10 bg-green-100 dark:bg-green-900 rounded-full flex items-center justify-center">
+                                            <span class="text-green-600 font-semibold">AL</span>
+                                        </div>
+                                        <div class="ml-4">
+                                            <div class="text-sm font-medium text-gray-900 dark:text-white">Alex Lee</div>
+                                            <div class="text-sm text-gray-500 dark:text-gray-400">UC Berkeley</div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="px-6 py-4 text-sm text-gray-900 dark:text-white">API Integration</td>
+                                <td class="px-6 py-4">
+                                    <div class="flex gap-1">
+                                        <span class="px-2 py-1 bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded text-xs">Python</span>
+                                        <span class="px-2 py-1 bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded text-xs">APIs</span>
+                                    </div>
+                                </td>
+                                <td class="px-6 py-4">
+                                    <span class="px-2 py-1 bg-grey-100 dark:bg-grey-900 text-grey-700 dark:text-grey-300 rounded text-xs">Pending</span>
+                                </td>
+                                <td class="px-6 py-4">
+                                    <button class="text-primary-600 hover:text-primary-700 text-sm font-medium mr-3">View Profile</button>
+                                    <button class="text-green-600 hover:text-green-700 text-sm font-medium">Accept</button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-gray-300 py-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-sm">
+            <p>&copy; 2026 ExperienceLink. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Dark mode toggle
+        const darkModeToggle = document.getElementById('darkModeToggle');
+        const html = document.documentElement;
+
+        if (localStorage.getItem('darkMode') === 'true' ||
+            (!localStorage.getItem('darkMode') && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            html.classList.add('dark');
+        }
+
+        darkModeToggle.addEventListener('click', () => {
+            html.classList.toggle('dark');
+            localStorage.setItem('darkMode', html.classList.contains('dark'));
+        });
+
+        // Mobile menu toggle
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Tab functionality
+        const tabs = {
+            tabActiveProjects: 'contentActiveProjects',
+            tabApplicants: 'contentApplicants',
+            tabPostNew: 'contentPostNew'
+        };
+
+        const tabButtons = document.querySelectorAll('.tab-btn');
+        const activeClasses = ['bg-white', 'dark:bg-gray-900', 'text-gray-900', 'dark:text-white', 'shadow-sm'];
+        const inactiveClasses = ['text-gray-600', 'dark:text-gray-400'];
+
+        Object.keys(tabs).forEach(tabId => {
+            document.getElementById(tabId).addEventListener('click', () => {
+                // Hide all content
+                Object.values(tabs).forEach(contentId => {
+                    document.getElementById(contentId).classList.add('hidden');
+                });
+
+                // Show selected content
+                document.getElementById(tabs[tabId]).classList.remove('hidden');
+
+                // Update tab styles
+                tabButtons.forEach(btn => {
+                    btn.classList.remove(...activeClasses);
+                    btn.classList.add(...inactiveClasses);
+                });
+
+                const activeTab = document.getElementById(tabId);
+                activeTab.classList.remove(...inactiveClasses);
+                activeTab.classList.add(...activeClasses);
+            });
+        });
+
+        // Character count for description
+        const description = document.getElementById('description');
+        const charCount = document.getElementById('charCount');
+
+        description.addEventListener('input', () => {
+            charCount.textContent = description.value.length;
+        });
+    </script>
+</body>
+</html>

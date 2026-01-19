@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About - ExperienceLink</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        primary: {
+                            50: '#f5f3ff',
+                            100: '#ede9fe',
+                            200: '#ddd6fe',
+                            300: '#c4b5fd',
+                            400: '#4169e1',
+                            500: '#8b5cf6',
+                            600: '#4169e1',
+                            700: '#002D72',
+                            800: '#5b21b6',
+                            900: '#2A4390',
+                        }
+                    },
+                    fontFamily: {
+                        'sans': ['Inter', 'system-ui', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="font-sans bg-white dark:bg-gray-900 transition-colors duration-300">
+    <!-- Navigation -->
+    <nav class="fixed top-0 left-0 right-0 bg-white dark:bg-gray-900 z-50 border-b border-gray-100 dark:border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <a href="index.html" class="text-xl font-bold text-primary-600">ExperienceLink</a>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="index.html" class="text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400">Home</a>
+                    <a href="projects.html" class="text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400">Projects</a>
+                    <a href="companies.html" class="text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400">Companies</a>
+                    <a href="about.html" class="text-gray-900 dark:text-white font-medium hover:text-primary-600 dark:hover:text-primary-400">About</a>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <button id="darkModeToggle" class="p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800">
+                        <svg class="w-5 h-5 text-gray-600 dark:text-gray-300 dark:hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"/>
+                        </svg>
+                        <svg class="w-5 h-5 text-gray-300 hidden dark:block" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"/>
+                        </svg>
+                    </button>
+                    <a href="login.html" class="text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 font-medium">Login</a>
+                    <a href="signup.html" class="bg-primary-600 hover:bg-primary-700 text-white px-5 py-2 rounded-lg font-medium transition-colors">Sign Up</a>
+                </div>
+                <button id="mobileMenuBtn" class="md:hidden p-2">
+                    <svg class="w-6 h-6 text-gray-600 dark:text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <div id="mobileMenu" class="hidden md:hidden bg-white dark:bg-gray-900 border-t border-gray-100 dark:border-gray-800">
+            <div class="px-4 py-3 space-y-3">
+                <a href="index.html" class="block text-gray-600 dark:text-gray-300">Home</a>
+                <a href="projects.html" class="block text-gray-600 dark:text-gray-300">Projects</a>
+                <a href="companies.html" class="block text-gray-600 dark:text-gray-300">Companies</a>
+                <a href="about.html" class="block text-gray-900 dark:text-white font-medium">About</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="pt-24 pb-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- Our Values Section -->
+            <div class="mb-16">
+                <h1 class="text-3xl font-bold text-gray-900 dark:text-white mb-8">Our Values</h1>
+
+                <div class="grid md:grid-cols-2 gap-6">
+                    <!-- Our Mission -->
+                    <div class="bg-gray-50 dark:bg-gray-800 rounded-xl p-8">
+                        <div class="w-12 h-12 bg-primary-100 dark:bg-primary-900 rounded-lg flex items-center justify-center mb-6">
+                            <svg class="w-6 h-6 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/>
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-3">Our Mission</h3>
+                        <p class="text-gray-600 dark:text-gray-300">To bridge the gap between academic learning and real-world experience by connecting students with meaningful project opportunities.</p>
+                    </div>
+
+                    <!-- Community First -->
+                    <div class="bg-gray-50 dark:bg-gray-800 rounded-xl p-8">
+                        <div class="w-12 h-12 bg-primary-100 dark:bg-primary-900 rounded-lg flex items-center justify-center mb-6">
+                            <svg class="w-6 h-6 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/>
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-3">Community First</h3>
+                        <p class="text-gray-600 dark:text-gray-300">We believe in building a supportive community where students and companies can grow together through collaboration.</p>
+                    </div>
+
+                    <!-- Innovation -->
+                    <div class="bg-gray-50 dark:bg-gray-800 rounded-xl p-8">
+                        <div class="w-12 h-12 bg-primary-100 dark:bg-primary-900 rounded-lg flex items-center justify-center mb-6">
+                            <svg class="w-6 h-6 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/>
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-3">Innovation</h3>
+                        <p class="text-gray-600 dark:text-gray-300">We're constantly evolving our platform to better serve students and companies in the ever-changing job market.</p>
+                    </div>
+
+                    <!-- Student Success -->
+                    <div class="bg-gray-50 dark:bg-gray-800 rounded-xl p-8">
+                        <div class="w-12 h-12 bg-primary-100 dark:bg-primary-900 rounded-lg flex items-center justify-center mb-6">
+                            <svg class="w-6 h-6 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/>
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-3">Student Success</h3>
+                        <p class="text-gray-600 dark:text-gray-300">Every feature we build is designed with student success in mind, helping them prepare for successful careers.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Join Our Community Section -->
+            <div class="bg-primary-600 rounded-2xl p-12 text-center">
+                <h2 class="text-3xl font-bold text-white mb-4">Join Our Community</h2>
+                <p class="text-primary-100 text-lg mb-8 max-w-2xl mx-auto">
+                    Whether you're a student looking for experience or a company seeking talent, ExperienceLink is here to help you succeed.
+                </p>
+
+                <!-- Stats -->
+                <div class="flex flex-wrap justify-center gap-8 md:gap-16">
+                    <div class="text-center">
+                        <div class="text-4xl md:text-5xl font-bold text-white">10,000+</div>
+                        <div class="text-primary-200 mt-1">Active Students</div>
+                    </div>
+                    <div class="hidden md:block w-px bg-primary-400"></div>
+                    <div class="text-center">
+                        <div class="text-4xl md:text-5xl font-bold text-white">500+</div>
+                        <div class="text-primary-200 mt-1">Projects Posted</div>
+                    </div>
+                    <div class="hidden md:block w-px bg-primary-400"></div>
+                    <div class="text-center">
+                        <div class="text-4xl md:text-5xl font-bold text-white">200+</div>
+                        <div class="text-primary-200 mt-1">Partner Companies</div>
+                    </div>
+                </div>
+
+                <div class="mt-8">
+                    <a href="signup.html" class="bg-white text-primary-600 hover:bg-gray-100 px-8 py-3 rounded-lg font-medium transition-colors inline-block">
+                        Get Started Today
+                    </a>
+                </div>
+            </div>
+
+            <!-- Team Section -->
+            <div class="mt-16">
+                <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-8 text-center">Our Story</h2>
+                <div class="max-w-3xl mx-auto text-center">
+                    <p class="text-gray-600 dark:text-gray-300 text-lg mb-6">
+                        ExperienceLink was founded with a simple idea: every student deserves the opportunity to gain real-world experience before graduation.
+                    </p>
+                    <p class="text-gray-600 dark:text-gray-300 text-lg mb-6">
+                        We noticed that many talented students struggle to land their first internship because most positions require prior experience. At the same time, companies have countless small projects that could benefit from fresh perspectives and eager talent.
+                    </p>
+                    <p class="text-gray-600 dark:text-gray-300 text-lg">
+                        ExperienceLink bridges this gap by creating a platform where students can work on real projects, build portfolios, and connect with companies—all while still in school.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-gray-300 py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold text-white mb-4">ExperienceLink</h3>
+                    <p class="text-sm">Connecting students with real-world opportunities to build their careers.</p>
+                </div>
+                <div>
+                    <h4 class="font-semibold text-white mb-4">For Students</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="projects.html" class="hover:text-primary-400">Browse Projects</a></li>
+                        <li><a href="#" class="hover:text-primary-400">Create Profile</a></li>
+                        <li><a href="#" class="hover:text-primary-400">Resources</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-semibold text-white mb-4">For Companies</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="companies.html" class="hover:text-primary-400">Post Projects</a></li>
+                        <li><a href="#" class="hover:text-primary-400">Find Talent</a></li>
+                        <li><a href="#" class="hover:text-primary-400">Pricing</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-semibold text-white mb-4">Company</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="about.html" class="hover:text-primary-400">About Us</a></li>
+                        <li><a href="#" class="hover:text-primary-400">Contact</a></li>
+                        <li><a href="#" class="hover:text-primary-400">Privacy Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 mt-8 pt-8 text-center text-sm">
+                <p>&copy; 2026 ExperienceLink. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Dark mode toggle
+        const darkModeToggle = document.getElementById('darkModeToggle');
+        const html = document.documentElement;
+
+        if (localStorage.getItem('darkMode') === 'true' ||
+            (!localStorage.getItem('darkMode') && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            html.classList.add('dark');
+        }
+
+        darkModeToggle.addEventListener('click', () => {
+            html.classList.toggle('dark');
+            localStorage.setItem('darkMode', html.classList.contains('dark'));
+        });
+
+        // Mobile menu toggle
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+    </script>
+</body>
+</html>

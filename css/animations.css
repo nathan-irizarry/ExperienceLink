@@ -1,0 +1,515 @@
+/* ============================================
+   EXPERIENCELINK ANIMATIONS
+   Keyframes & Animation Utilities
+   ============================================ */
+
+/* ============================================
+   KEYFRAMES
+   ============================================ */
+
+/* Fade Up Animation */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Fade In Animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Slide In from Left */
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Slide In from Right */
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Scale In */
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Text Reveal (word by word) */
+@keyframes textReveal {
+  from {
+    opacity: 0;
+    transform: translateY(100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Gradient Mesh Float */
+@keyframes meshFloat {
+  0%, 100% {
+    transform: translate(0, 0) scale(1);
+  }
+  25% {
+    transform: translate(10px, -20px) scale(1.05);
+  }
+  50% {
+    transform: translate(-5px, 10px) scale(0.95);
+  }
+  75% {
+    transform: translate(-15px, -10px) scale(1.02);
+  }
+}
+
+/* Blob Morph */
+@keyframes blobMorph {
+  0%, 100% {
+    border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+  }
+  25% {
+    border-radius: 30% 60% 70% 40% / 50% 60% 30% 60%;
+  }
+  50% {
+    border-radius: 50% 60% 30% 60% / 30% 60% 70% 40%;
+  }
+  75% {
+    border-radius: 60% 40% 60% 30% / 60% 30% 40% 70%;
+  }
+}
+
+/* Pulse Glow */
+@keyframes pulseGlow {
+  0%, 100% {
+    box-shadow: 0 0 20px rgba(23, 67, 240, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 40px rgba(23, 67, 240, 0.5);
+  }
+}
+
+/* Rotate Slow */
+@keyframes rotateSlow {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Shimmer */
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+/* Line Draw */
+@keyframes lineDraw {
+  from {
+    stroke-dashoffset: 1000;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+/* ============================================
+   ANIMATION CLASSES - Initial States
+   ============================================ */
+
+/* Elements waiting for scroll trigger */
+[data-animate] {
+  opacity: 0;
+  transition: opacity var(--duration-slow) var(--ease-out),
+              transform var(--duration-slow) var(--ease-out);
+}
+
+[data-animate="fadeUp"] {
+  transform: translateY(30px);
+}
+
+[data-animate="fadeIn"] {
+  transform: none;
+}
+
+[data-animate="slideInLeft"] {
+  transform: translateX(-50px);
+}
+
+[data-animate="slideInRight"] {
+  transform: translateX(50px);
+}
+
+[data-animate="scaleIn"] {
+  transform: scale(0.9);
+}
+
+/* ============================================
+   ANIMATION CLASSES - Active States
+   ============================================ */
+
+[data-animate].is-visible {
+  opacity: 1;
+  transform: translate(0, 0) scale(1);
+}
+
+/* Stagger delays via CSS custom property */
+[data-animate].is-visible {
+  transition-delay: var(--delay, 0ms);
+}
+
+/* ============================================
+   HERO TEXT REVEAL ANIMATION
+   ============================================ */
+
+.hero-word {
+  display: inline-block;
+  overflow: hidden;
+}
+
+.hero-word span {
+  display: inline-block;
+  transform: translateY(100%);
+  opacity: 0;
+  animation: textReveal 0.8s var(--ease-out) forwards;
+  animation-delay: var(--word-delay, 0ms);
+}
+
+.hero-word:nth-child(1) span { --word-delay: 0ms; }
+.hero-word:nth-child(2) span { --word-delay: 100ms; }
+.hero-word:nth-child(3) span { --word-delay: 200ms; }
+.hero-word:nth-child(4) span { --word-delay: 300ms; }
+.hero-word:nth-child(5) span { --word-delay: 400ms; }
+.hero-word:nth-child(6) span { --word-delay: 500ms; }
+
+/* ============================================
+   GRADIENT MESH BACKGROUND
+   ============================================ */
+
+.mesh-gradient {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  z-index: var(--z-behind);
+}
+
+.mesh-blob {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  opacity: 0.6;
+  animation: meshFloat 20s ease-in-out infinite, blobMorph 15s ease-in-out infinite;
+}
+
+.mesh-blob-1 {
+  width: 400px;
+  height: 400px;
+  background: var(--color-amber);
+  top: -100px;
+  right: -100px;
+  animation-delay: 0s;
+}
+
+.mesh-blob-2 {
+  width: 300px;
+  height: 300px;
+  background: var(--color-coral);
+  bottom: -50px;
+  left: -50px;
+  animation-delay: -5s;
+}
+
+.mesh-blob-3 {
+  width: 250px;
+  height: 250px;
+  background: var(--color-sage);
+  top: 50%;
+  left: 30%;
+  animation-delay: -10s;
+}
+
+.dark .mesh-blob {
+  opacity: 0.3;
+}
+
+/* ============================================
+   HOVER ANIMATIONS
+   ============================================ */
+
+.hover-lift {
+  transition: transform var(--duration-normal) var(--ease-out),
+              box-shadow var(--duration-normal) var(--ease-out);
+}
+
+.hover-lift:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-xl);
+}
+
+.hover-scale {
+  transition: transform var(--duration-normal) var(--ease-spring);
+}
+
+.hover-scale:hover {
+  transform: scale(1.02);
+}
+
+.hover-glow {
+  transition: box-shadow var(--duration-normal) var(--ease-out);
+}
+
+.hover-glow:hover {
+  box-shadow: var(--shadow-glow-amber);
+}
+
+/* ============================================
+   LINK UNDERLINE ANIMATION
+   ============================================ */
+
+.link-underline {
+  position: relative;
+  display: inline-block;
+}
+
+.link-underline::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: var(--color-amber);
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform var(--duration-normal) var(--ease-out);
+}
+
+.link-underline:hover::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+/* ============================================
+   ARROW ANIMATION (for buttons/links)
+   ============================================ */
+
+.arrow-right {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.arrow-right svg,
+.arrow-right .arrow {
+  transition: transform var(--duration-normal) var(--ease-out);
+}
+
+.arrow-right:hover svg,
+.arrow-right:hover .arrow {
+  transform: translateX(4px);
+}
+
+/* ============================================
+   LOADING STATES
+   ============================================ */
+
+.skeleton {
+  background: linear-gradient(
+    90deg,
+    var(--color-stone-200) 25%,
+    var(--color-stone-100) 50%,
+    var(--color-stone-200) 75%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+  border-radius: var(--radius-md);
+}
+
+.dark .skeleton {
+  background: linear-gradient(
+    90deg,
+    var(--color-charcoal) 25%,
+    var(--color-charcoal-light) 50%,
+    var(--color-charcoal) 75%
+  );
+  background-size: 200% 100%;
+}
+
+/* ============================================
+   PAGE TRANSITION
+   ============================================ */
+
+.page-enter {
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.page-enter-active {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity var(--duration-slow) var(--ease-out),
+              transform var(--duration-slow) var(--ease-out);
+}
+
+/* ============================================
+   REDUCED MOTION
+   ============================================ */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  [data-animate] {
+    opacity: 1;
+    transform: none;
+  }
+
+  .hero-word span {
+    opacity: 1;
+    transform: none;
+    animation: none;
+  }
+}
+
+/* ============================================
+   GEOMETRIC DECORATIVE SHAPES
+   ============================================ */
+
+.geo-shape {
+  position: absolute;
+  pointer-events: none;
+}
+
+.geo-circle {
+  border-radius: 50%;
+  border: 2px solid var(--color-amber);
+  opacity: 0.3;
+}
+
+.geo-line {
+  height: 2px;
+  background: linear-gradient(90deg, var(--color-amber), transparent);
+  opacity: 0.5;
+}
+
+.geo-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--color-amber);
+  opacity: 0.6;
+}
+
+/* ============================================
+   CONNECTING LINES (for steps)
+   ============================================ */
+
+.step-connector {
+  position: relative;
+}
+
+.step-connector::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 100%;
+  width: calc(100% - 80px);
+  height: 2px;
+  background: linear-gradient(90deg, var(--color-amber), var(--color-stone-300));
+  opacity: 0.5;
+}
+
+.step-connector:last-child::after {
+  display: none;
+}
+
+@media (max-width: 767px) {
+  .step-connector::after {
+    display: none;
+  }
+}
+
+/* ============================================
+   CARD HOVER EFFECTS
+   ============================================ */
+
+.card-hover {
+  position: relative;
+  overflow: hidden;
+}
+
+.card-hover::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, rgba(23, 67, 240, 0.1), transparent);
+  opacity: 0;
+  transition: opacity var(--duration-normal) var(--ease-out);
+}
+
+.card-hover:hover::before {
+  opacity: 1;
+}
+
+/* ============================================
+   NUMBER COUNTER ANIMATION
+   ============================================ */
+
+.counter {
+  font-variant-numeric: tabular-nums;
+}
+
+@keyframes countUp {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

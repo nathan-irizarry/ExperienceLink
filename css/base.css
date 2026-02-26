@@ -1,0 +1,422 @@
+/* ============================================
+   EXPERIENCELINK BASE STYLES
+   Typography, Reset & Global Styles
+   ============================================ */
+
+/* ============================================
+   CSS RESET
+   ============================================ */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  -moz-tab-size: 4;
+  tab-size: 4;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  line-height: var(--leading-normal);
+  color: var(--color-text-primary);
+  background-color: var(--color-bg-primary);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  transition: background-color var(--duration-normal) var(--ease-out),
+              color var(--duration-normal) var(--ease-out);
+}
+
+/* ============================================
+   TYPOGRAPHY - HEADINGS
+   ============================================ */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-display);
+  font-weight: var(--font-semibold);
+  line-height: var(--leading-tight);
+  color: var(--color-text-primary);
+  letter-spacing: -0.02em;
+}
+
+h1 {
+  font-size: var(--text-5xl);
+  font-weight: var(--font-light);
+}
+
+h2 {
+  font-size: var(--text-4xl);
+  font-weight: var(--font-normal);
+}
+
+h3 {
+  font-size: var(--text-2xl);
+  font-weight: var(--font-medium);
+}
+
+h4 {
+  font-size: var(--text-xl);
+  font-weight: var(--font-medium);
+}
+
+h5 {
+  font-size: var(--text-lg);
+  font-weight: var(--font-semibold);
+}
+
+h6 {
+  font-size: var(--text-base);
+  font-weight: var(--font-semibold);
+}
+
+/* Responsive headings */
+@media (min-width: 768px) {
+  h1 { font-size: var(--text-6xl); }
+  h2 { font-size: var(--text-5xl); }
+}
+
+@media (min-width: 1024px) {
+  h1 { font-size: var(--text-7xl); }
+  h2 { font-size: var(--text-5xl); }
+}
+
+/* ============================================
+   TYPOGRAPHY - BODY TEXT
+   ============================================ */
+p {
+  font-family: var(--font-body);
+  line-height: var(--leading-relaxed);
+  color: var(--color-text-secondary);
+  margin-bottom: var(--space-4);
+}
+
+p:last-child {
+  margin-bottom: 0;
+}
+
+.lead {
+  font-size: var(--text-lg);
+  line-height: var(--leading-relaxed);
+  color: var(--color-text-secondary);
+}
+
+@media (min-width: 768px) {
+  .lead {
+    font-size: var(--text-xl);
+  }
+}
+
+small, .text-sm {
+  font-size: var(--text-sm);
+}
+
+.text-xs {
+  font-size: var(--text-xs);
+}
+
+.text-lg {
+  font-size: var(--text-lg);
+}
+
+.text-xl {
+  font-size: var(--text-xl);
+}
+
+/* ============================================
+   TYPOGRAPHY - MONOSPACE
+   ============================================ */
+.mono, code, kbd, samp, pre {
+  font-family: var(--font-mono);
+}
+
+.stat-number {
+  font-family: var(--font-mono);
+  font-weight: var(--font-bold);
+  letter-spacing: -0.02em;
+}
+
+.label {
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--color-text-muted);
+}
+
+/* ============================================
+   TYPOGRAPHY - DISPLAY TEXT
+   ============================================ */
+.display {
+  font-family: var(--font-display);
+}
+
+.display-xl {
+  font-family: var(--font-display);
+  font-size: var(--text-6xl);
+  font-weight: var(--font-light);
+  line-height: var(--leading-none);
+  letter-spacing: -0.03em;
+}
+
+@media (min-width: 768px) {
+  .display-xl {
+    font-size: var(--text-7xl);
+  }
+}
+
+@media (min-width: 1024px) {
+  .display-xl {
+    font-size: var(--text-8xl);
+  }
+}
+
+/* ============================================
+   LINKS
+   ============================================ */
+a {
+  color: var(--color-amber);
+  text-decoration: none;
+  transition: color var(--duration-fast) var(--ease-out);
+}
+
+a:hover {
+  color: var(--color-amber-dark);
+}
+
+/* ============================================
+   IMAGES & MEDIA
+   ============================================ */
+img, video {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* ============================================
+   LISTS
+   ============================================ */
+ul, ol {
+  list-style: none;
+}
+
+/* ============================================
+   SELECTION
+   ============================================ */
+::selection {
+  background-color: var(--color-amber);
+  color: var(--color-ink);
+}
+
+/* ============================================
+   FOCUS STATES
+   ============================================ */
+:focus-visible {
+  outline: 2px solid var(--color-amber);
+  outline-offset: 2px;
+}
+
+/* ============================================
+   SCROLLBAR STYLING
+   ============================================ */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-bg-secondary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-stone-400);
+  border-radius: var(--radius-full);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-stone-500);
+}
+
+/* ============================================
+   LAYOUT UTILITIES
+   ============================================ */
+.container {
+  width: 100%;
+  max-width: var(--max-width-content);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: var(--space-4);
+  padding-right: var(--space-4);
+}
+
+@media (min-width: 640px) {
+  .container {
+    padding-left: var(--space-6);
+    padding-right: var(--space-6);
+  }
+}
+
+@media (min-width: 1024px) {
+  .container {
+    padding-left: var(--space-8);
+    padding-right: var(--space-8);
+  }
+}
+
+.container-wide {
+  max-width: var(--max-width-2xl);
+}
+
+/* ============================================
+   SECTION SPACING
+   ============================================ */
+.section {
+  padding-top: var(--space-16);
+  padding-bottom: var(--space-16);
+}
+
+@media (min-width: 768px) {
+  .section {
+    padding-top: var(--space-20);
+    padding-bottom: var(--space-20);
+  }
+}
+
+@media (min-width: 1024px) {
+  .section {
+    padding-top: var(--space-24);
+    padding-bottom: var(--space-24);
+  }
+}
+
+/* ============================================
+   GRID SYSTEM
+   ============================================ */
+.grid {
+  display: grid;
+  gap: var(--grid-gap);
+}
+
+.grid-12 {
+  grid-template-columns: repeat(12, 1fr);
+}
+
+.grid-cols-1 { grid-template-columns: repeat(1, 1fr); }
+.grid-cols-2 { grid-template-columns: repeat(2, 1fr); }
+.grid-cols-3 { grid-template-columns: repeat(3, 1fr); }
+.grid-cols-4 { grid-template-columns: repeat(4, 1fr); }
+
+@media (min-width: 768px) {
+  .md\:grid-cols-2 { grid-template-columns: repeat(2, 1fr); }
+  .md\:grid-cols-3 { grid-template-columns: repeat(3, 1fr); }
+  .md\:grid-cols-4 { grid-template-columns: repeat(4, 1fr); }
+}
+
+@media (min-width: 1024px) {
+  .lg\:grid-cols-2 { grid-template-columns: repeat(2, 1fr); }
+  .lg\:grid-cols-3 { grid-template-columns: repeat(3, 1fr); }
+  .lg\:grid-cols-4 { grid-template-columns: repeat(4, 1fr); }
+  .lg\:grid-cols-12 { grid-template-columns: repeat(12, 1fr); }
+}
+
+/* Bento-style column spans */
+.col-span-4 { grid-column: span 4; }
+.col-span-5 { grid-column: span 5; }
+.col-span-6 { grid-column: span 6; }
+.col-span-7 { grid-column: span 7; }
+.col-span-8 { grid-column: span 8; }
+.col-span-12 { grid-column: span 12; }
+
+@media (max-width: 1023px) {
+  .col-span-4,
+  .col-span-5,
+  .col-span-6,
+  .col-span-7,
+  .col-span-8 {
+    grid-column: span 12;
+  }
+}
+
+/* ============================================
+   FLEXBOX UTILITIES
+   ============================================ */
+.flex { display: flex; }
+.flex-col { flex-direction: column; }
+.flex-wrap { flex-wrap: wrap; }
+.items-center { align-items: center; }
+.items-start { align-items: flex-start; }
+.items-end { align-items: flex-end; }
+.justify-center { justify-content: center; }
+.justify-between { justify-content: space-between; }
+.justify-end { justify-content: flex-end; }
+.gap-2 { gap: var(--space-2); }
+.gap-3 { gap: var(--space-3); }
+.gap-4 { gap: var(--space-4); }
+.gap-6 { gap: var(--space-6); }
+.gap-8 { gap: var(--space-8); }
+
+/* ============================================
+   DARK MODE - BODY STYLES
+   ============================================ */
+.dark body {
+  background-color: var(--color-ink);
+  color: var(--color-cream);
+}
+
+.dark h1, .dark h2, .dark h3, .dark h4, .dark h5, .dark h6 {
+  color: var(--color-cream);
+}
+
+.dark p {
+  color: var(--color-stone-400);
+}
+
+.dark .lead {
+  color: var(--color-stone-300);
+}
+
+/* ============================================
+   GRAIN TEXTURE OVERLAY
+   ============================================ */
+.grain::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  opacity: 0.03;
+  z-index: var(--z-tooltip);
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+}
+
+.dark .grain::before {
+  opacity: 0.05;
+}
+
+/* ============================================
+   TEXT COLOR UTILITIES
+   ============================================ */
+.text-amber { color: var(--color-amber); }
+.text-coral { color: var(--color-coral); }
+.text-sage { color: var(--color-sage); }
+.text-stone-500 { color: var(--color-stone-500); }
+.text-stone-900 { color: var(--color-stone-900); }
+.text-cream { color: var(--color-cream); }
+.text-ink { color: var(--color-ink); }
+
+/* ============================================
+   BACKGROUND COLOR UTILITIES
+   ============================================ */
+.bg-ink { background-color: var(--color-ink); }
+.bg-charcoal { background-color: var(--color-charcoal); }
+.bg-cream { background-color: var(--color-cream); }
+.bg-amber { background-color: var(--color-amber); }
+.bg-coral { background-color: var(--color-coral); }
+.bg-sage { background-color: var(--color-sage); }

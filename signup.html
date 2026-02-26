@@ -4,120 +4,224 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sign Up - ExperienceLink</title>
-    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="css/tokens.css">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/components.css">
+
+    <!-- Tailwind for utilities -->
+    <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
             darkMode: 'class',
             theme: {
                 extend: {
                     colors: {
-                        primary: {
-                            50: '#f5f3ff',
-                            100: '#ede9fe',
-                            200: '#ddd6fe',
-                            300: '#c4b5fd',
-                            400: '#4169e1',
-                            500: '#8b5cf6',
-                            600: '#4169e1',
-                            700: '#002D72',
-                            800: '#5b21b6',
-                            900: '#2A4390',
+                        ink: '#0f0f23',
+                        charcoal: '#1a1a2e',
+                        amber: '#1743f0',
+                        coral: '#3b82f6',
+                        sage: '#06b6d4',
+                        cream: '#faf8f5',
+                        stone: {
+                            100: '#f5f4f2',
+                            200: '#e8e6e1',
+                            300: '#d4d1ca',
+                            400: '#a8a49d',
+                            500: '#8a8680',
+                            600: '#6b6860',
+                            700: '#4a4840',
+                            800: '#37352f',
+                            900: '#2c2a27',
                         }
                     },
                     fontFamily: {
-                        'sans': ['Inter', 'system-ui', 'sans-serif'],
+                        'display': ['Cormorant Garamond', 'Georgia', 'serif'],
+                        'body': ['Plus Jakarta Sans', 'system-ui', 'sans-serif'],
+                        'mono': ['JetBrains Mono', 'Consolas', 'monospace'],
                     }
                 }
             }
         }
     </script>
 </head>
-<body class="font-sans bg-gray-50 dark:bg-gray-900 transition-colors duration-300 min-h-screen flex flex-col">
-    <!-- Navigation -->
-    <nav class="bg-white dark:bg-gray-900 border-b border-gray-100 dark:border-gray-800">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center h-16">
-                <a href="index.html" class="text-xl font-bold text-primary-600">ExperienceLink</a>
-                <div class="flex items-center space-x-4">
-                    <button id="darkModeToggle" class="p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800">
-                        <svg class="w-5 h-5 text-gray-600 dark:text-gray-300 dark:hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+<body class="font-body bg-cream dark:bg-ink transition-colors duration-300">
+    <!-- Split Screen Layout -->
+    <div class="split-layout">
+        <!-- Visual Panel (Left) -->
+        <div class="split-visual">
+            <!-- Gradient Mesh Background -->
+            <div class="mesh-gradient">
+                <div class="mesh-blob mesh-blob-1" style="opacity: 0.4;"></div>
+                <div class="mesh-blob mesh-blob-3" style="opacity: 0.4;"></div>
+            </div>
+
+            <!-- Content -->
+            <div class="relative z-10 p-12 max-w-lg">
+                <!-- Logo -->
+                <a href="index.html" class="flex items-center gap-3 text-cream mb-16">
+                    <div class="w-10 h-10 bg-amber rounded-lg flex items-center justify-center">
+                        <svg class="w-6 h-6 text-ink" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/>
+                        </svg>
+                    </div>
+                    <span class="font-display text-2xl font-semibold">ExperienceLink</span>
+                </a>
+
+                <!-- Feature Highlights -->
+                <div class="space-y-8">
+                    <h2 class="font-display text-3xl text-cream font-light">Start Building Your Future Today</h2>
+
+                    <div class="space-y-6">
+                        <div class="flex gap-4">
+                            <div class="icon-box flex-shrink-0" style="background: rgba(23, 67, 240, 0.2);">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                                </svg>
+                            </div>
+                            <div>
+                                <h3 class="text-cream font-medium mb-1">Real Projects</h3>
+                                <p class="text-stone-400 text-sm">Work on actual industry projects from leading companies.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex gap-4">
+                            <div class="icon-box flex-shrink-0" style="background: rgba(23, 67, 240, 0.2);">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"/>
+                                </svg>
+                            </div>
+                            <div>
+                                <h3 class="text-cream font-medium mb-1">Build Your Network</h3>
+                                <p class="text-stone-400 text-sm">Connect with professionals and peers in your field.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex gap-4">
+                            <div class="icon-box flex-shrink-0" style="background: rgba(23, 67, 240, 0.2);">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"/>
+                                </svg>
+                            </div>
+                            <div>
+                                <h3 class="text-cream font-medium mb-1">Earn Recognition</h3>
+                                <p class="text-stone-400 text-sm">Get paid or earn credits while building your portfolio.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Stats -->
+                <div class="flex gap-12 mt-16">
+                    <div class="stat">
+                        <div class="stat-value text-amber" data-counter="200" data-suffix="+">200+</div>
+                        <div class="stat-label text-stone-400">Companies</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-value text-amber" data-counter="95" data-suffix="%">95%</div>
+                        <div class="stat-label text-stone-400">Satisfaction</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Form Panel (Right) -->
+        <div class="split-form">
+            <div class="split-form-inner">
+                <!-- Mobile Logo -->
+                <a href="index.html" class="lg:hidden flex items-center gap-3 mb-8">
+                    <div class="w-8 h-8 bg-amber rounded-lg flex items-center justify-center">
+                        <svg class="w-5 h-5 text-ink" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/>
+                        </svg>
+                    </div>
+                    <span class="font-display text-xl font-semibold text-stone-900 dark:text-cream">ExperienceLink</span>
+                </a>
+
+                <!-- Dark Mode Toggle -->
+                <div class="flex justify-end mb-6 lg:absolute lg:top-8 lg:right-8">
+                    <button data-theme-toggle class="theme-toggle" aria-label="Toggle dark mode">
+                        <svg class="icon-sun" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"/>
                         </svg>
-                        <svg class="w-5 h-5 text-gray-300 hidden dark:block" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <svg class="icon-moon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"/>
                         </svg>
                     </button>
                 </div>
-            </div>
-        </div>
-    </nav>
 
-    <!-- Sign Up Form -->
-    <main class="flex-1 flex items-center justify-center px-4 py-12">
-        <div class="w-full max-w-md">
-            <div class="bg-white dark:bg-gray-800 rounded-2xl shadow-sm border border-gray-100 dark:border-gray-700 p-8">
-                <div class="text-center mb-8">
-                    <h1 class="text-2xl font-bold text-gray-900 dark:text-white">Create an Account</h1>
-                    <p class="text-gray-600 dark:text-gray-400 mt-2">Join ExperienceLink and start your journey</p>
+                <!-- Form Header -->
+                <div class="mb-8">
+                    <h1 class="font-display text-3xl md:text-4xl font-normal text-stone-900 dark:text-cream mb-3">
+                        Create an Account
+                    </h1>
+                    <p class="text-stone-600 dark:text-stone-400">
+                        Join ExperienceLink and start your journey
+                    </p>
                 </div>
 
                 <!-- Account Type Toggle -->
-                <div class="flex bg-gray-100 dark:bg-gray-900 rounded-lg p-1 mb-6">
-                    <button id="studentBtn" class="flex-1 py-2 rounded-md text-sm font-medium bg-white dark:bg-gray-800 text-gray-900 dark:text-white shadow-sm transition-all">
-                        I'm a Student
-                    </button>
-                    <button id="companyBtn" class="flex-1 py-2 rounded-md text-sm font-medium text-gray-600 dark:text-gray-400 transition-all">
-                        I'm a Company
-                    </button>
+                <div class="tabs w-full mb-6" data-tabs>
+                    <button data-tab="student" class="tab flex-1 active">I'm a Student</button>
+                    <button data-tab="company" class="tab flex-1">I'm a Company</button>
                 </div>
 
+                <!-- Form -->
                 <form class="space-y-5">
                     <!-- Name -->
-                    <div>
-                        <label for="name" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
-                            <span id="nameLabel">Full Name</span>
-                        </label>
-                        <input type="text" id="name" placeholder="John Doe" class="w-full px-4 py-3 border border-gray-200 dark:border-gray-700 rounded-lg bg-white dark:bg-gray-900 text-gray-900 dark:text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent">
+                    <div class="form-group">
+                        <label for="name" class="form-label" id="nameLabel">Full Name</label>
+                        <input type="text" id="name" placeholder="John Doe" class="form-input">
                     </div>
 
                     <!-- Email -->
-                    <div>
-                        <label for="email" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Email Address</label>
-                        <input type="email" id="email" placeholder="you@example.com" class="w-full px-4 py-3 border border-gray-200 dark:border-gray-700 rounded-lg bg-white dark:bg-gray-900 text-gray-900 dark:text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent">
+                    <div class="form-group">
+                        <label for="email" class="form-label">Email Address</label>
+                        <input type="email" id="email" placeholder="you@example.com" class="form-input">
                     </div>
 
-                    <!-- University/Industry (Dynamic) -->
-                    <div id="dynamicField">
-                        <label for="university" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">University</label>
-                        <input type="text" id="university" placeholder="e.g., Stanford University" class="w-full px-4 py-3 border border-gray-200 dark:border-gray-700 rounded-lg bg-white dark:bg-gray-900 text-gray-900 dark:text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent">
+                    <!-- Dynamic Field (Student) -->
+                    <div class="form-group" data-tab-panel="student">
+                        <label for="university" class="form-label">University</label>
+                        <input type="text" id="university" placeholder="e.g., Stanford University" class="form-input">
+                    </div>
+
+                    <!-- Dynamic Field (Company) - Hidden by default -->
+                    <div class="form-group hidden" data-tab-panel="company">
+                        <label for="industry" class="form-label">Industry</label>
+                        <input type="text" id="industry" placeholder="e.g., Technology, Healthcare" class="form-input">
                     </div>
 
                     <!-- Password -->
-                    <div>
-                        <label for="password" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Password</label>
-                        <input type="password" id="password" placeholder="Create a password" class="w-full px-4 py-3 border border-gray-200 dark:border-gray-700 rounded-lg bg-white dark:bg-gray-900 text-gray-900 dark:text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent">
-                        <p class="text-xs text-gray-500 dark:text-gray-400 mt-1">Must be at least 8 characters</p>
+                    <div class="form-group">
+                        <label for="password" class="form-label">Password</label>
+                        <input type="password" id="password" placeholder="Create a password" class="form-input">
+                        <p class="text-xs text-stone-500 mt-2">Must be at least 8 characters</p>
                     </div>
 
                     <!-- Confirm Password -->
-                    <div>
-                        <label for="confirmPassword" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Confirm Password</label>
-                        <input type="password" id="confirmPassword" placeholder="Confirm your password" class="w-full px-4 py-3 border border-gray-200 dark:border-gray-700 rounded-lg bg-white dark:bg-gray-900 text-gray-900 dark:text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent">
+                    <div class="form-group">
+                        <label for="confirmPassword" class="form-label">Confirm Password</label>
+                        <input type="password" id="confirmPassword" placeholder="Confirm your password" class="form-input">
                     </div>
 
                     <!-- Terms -->
-                    <div class="flex items-start">
-                        <input type="checkbox" id="terms" class="w-4 h-4 mt-1 rounded border-gray-300 text-primary-600 focus:ring-primary-500">
-                        <label for="terms" class="ml-2 text-sm text-gray-600 dark:text-gray-400">
-                            I agree to the <a href="#" class="text-primary-600 hover:text-primary-700">Terms of Service</a> and <a href="#" class="text-primary-600 hover:text-primary-700">Privacy Policy</a>
+                    <div class="flex items-start gap-2">
+                        <input type="checkbox" id="terms" class="form-checkbox mt-1">
+                        <label for="terms" class="text-sm text-stone-600 dark:text-stone-400">
+                            I agree to the <a href="#" class="text-amber hover:text-amber/80 link-underline">Terms of Service</a> and <a href="#" class="text-amber hover:text-amber/80 link-underline">Privacy Policy</a>
                         </label>
                     </div>
 
                     <!-- Submit Button -->
-                    <button type="submit" class="w-full bg-primary-600 hover:bg-primary-700 text-white py-3 rounded-lg font-medium transition-colors">
+                    <button type="submit" class="btn btn-primary w-full">
                         Create Account
                     </button>
                 </form>
@@ -125,91 +229,69 @@
                 <!-- Divider -->
                 <div class="relative my-6">
                     <div class="absolute inset-0 flex items-center">
-                        <div class="w-full border-t border-gray-200 dark:border-gray-700"></div>
+                        <div class="w-full border-t border-stone-200 dark:border-charcoal"></div>
                     </div>
                     <div class="relative flex justify-center text-sm">
-                        <span class="px-4 bg-white dark:bg-gray-800 text-gray-500 dark:text-gray-400">Or sign up with</span>
+                        <span class="px-4 bg-cream dark:bg-ink text-stone-500">Or sign up with</span>
                     </div>
                 </div>
 
                 <!-- Social Sign Up -->
                 <div class="grid grid-cols-2 gap-4">
-                    <button class="flex items-center justify-center gap-2 px-4 py-3 border border-gray-200 dark:border-gray-700 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors">
+                    <button class="social-btn">
                         <svg class="w-5 h-5" viewBox="0 0 24 24">
                             <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
                             <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
                             <path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/>
                             <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/>
                         </svg>
-                        <span class="text-sm font-medium text-gray-700 dark:text-gray-300">Google</span>
+                        <span>Google</span>
                     </button>
-                    <button class="flex items-center justify-center gap-2 px-4 py-3 border border-gray-200 dark:border-gray-700 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors">
-                        <svg class="w-5 h-5 text-gray-900 dark:text-white" fill="currentColor" viewBox="0 0 24 24">
+                    <button class="social-btn">
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
                             <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
                         </svg>
-                        <span class="text-sm font-medium text-gray-700 dark:text-gray-300">GitHub</span>
+                        <span>GitHub</span>
                     </button>
                 </div>
 
                 <!-- Login Link -->
-                <p class="text-center text-sm text-gray-600 dark:text-gray-400 mt-6">
-                    Already have an account? <a href="login.html" class="text-primary-600 hover:text-primary-700 font-medium">Sign in</a>
+                <p class="text-center text-stone-600 dark:text-stone-400 mt-6">
+                    Already have an account? <a href="login.html" class="text-amber hover:text-amber/80 font-medium link-underline">Sign in</a>
                 </p>
             </div>
         </div>
-    </main>
+    </div>
 
+    <!-- Scripts -->
+    <script src="js/animations.js"></script>
     <script>
-        // Dark mode toggle
-        const darkModeToggle = document.getElementById('darkModeToggle');
-        const html = document.documentElement;
+        // Custom tab handling for signup form
+        document.addEventListener('DOMContentLoaded', () => {
+            const studentTab = document.querySelector('[data-tab="student"]');
+            const companyTab = document.querySelector('[data-tab="company"]');
+            const studentPanel = document.querySelector('[data-tab-panel="student"]');
+            const companyPanel = document.querySelector('[data-tab-panel="company"]');
+            const nameLabel = document.getElementById('nameLabel');
+            const nameInput = document.getElementById('name');
 
-        if (localStorage.getItem('darkMode') === 'true' ||
-            (!localStorage.getItem('darkMode') && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-            html.classList.add('dark');
-        }
+            studentTab.addEventListener('click', () => {
+                studentTab.classList.add('active');
+                companyTab.classList.remove('active');
+                studentPanel.classList.remove('hidden');
+                companyPanel.classList.add('hidden');
+                nameLabel.textContent = 'Full Name';
+                nameInput.placeholder = 'John Doe';
+            });
 
-        darkModeToggle.addEventListener('click', () => {
-            html.classList.toggle('dark');
-            localStorage.setItem('darkMode', html.classList.contains('dark'));
-        });
-
-        // Account type toggle
-        const studentBtn = document.getElementById('studentBtn');
-        const companyBtn = document.getElementById('companyBtn');
-        const nameLabel = document.getElementById('nameLabel');
-        const nameInput = document.getElementById('name');
-        const dynamicField = document.getElementById('dynamicField');
-
-        const activeClasses = ['bg-white', 'dark:bg-gray-800', 'text-gray-900', 'dark:text-white', 'shadow-sm'];
-        const inactiveClasses = ['text-gray-600', 'dark:text-gray-400'];
-
-        studentBtn.addEventListener('click', () => {
-            studentBtn.classList.add(...activeClasses);
-            studentBtn.classList.remove(...inactiveClasses);
-            companyBtn.classList.remove(...activeClasses);
-            companyBtn.classList.add(...inactiveClasses);
-
-            nameLabel.textContent = 'Full Name';
-            nameInput.placeholder = 'John Doe';
-            dynamicField.innerHTML = `
-                <label for="university" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">University</label>
-                <input type="text" id="university" placeholder="e.g., Stanford University" class="w-full px-4 py-3 border border-gray-200 dark:border-gray-700 rounded-lg bg-white dark:bg-gray-900 text-gray-900 dark:text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent">
-            `;
-        });
-
-        companyBtn.addEventListener('click', () => {
-            companyBtn.classList.add(...activeClasses);
-            companyBtn.classList.remove(...inactiveClasses);
-            studentBtn.classList.remove(...activeClasses);
-            studentBtn.classList.add(...inactiveClasses);
-
-            nameLabel.textContent = 'Company Name';
-            nameInput.placeholder = 'Acme Inc.';
-            dynamicField.innerHTML = `
-                <label for="industry" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Industry</label>
-                <input type="text" id="industry" placeholder="e.g., Technology, Healthcare" class="w-full px-4 py-3 border border-gray-200 dark:border-gray-700 rounded-lg bg-white dark:bg-gray-900 text-gray-900 dark:text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent">
-            `;
+            companyTab.addEventListener('click', () => {
+                companyTab.classList.add('active');
+                studentTab.classList.remove('active');
+                companyPanel.classList.remove('hidden');
+                studentPanel.classList.add('hidden');
+                nameLabel.textContent = 'Company Name';
+                nameInput.placeholder = 'Acme Inc.';
+            });
         });
     </script>
 </body>

@@ -69,8 +69,8 @@
             <!-- Desktop Navigation -->
             <div class="nav-links">
                 <a href="index.html" class="nav-link">Home</a>
-                <a href="projects.html" class="nav-link active">Projects</a>
-                <a href="companies.html" class="nav-link">Companies</a>
+                <a href="projects.html" class="nav-link active">For Students</a>
+                <a href="companies.html" class="nav-link">For Companies</a>
                 <a href="about.html" class="nav-link">About</a>
             </div>
 
@@ -99,8 +99,8 @@
         <!-- Mobile Menu -->
         <div data-mobile-menu class="nav-mobile">
             <a href="index.html" class="nav-link">Home</a>
-            <a href="projects.html" class="nav-link active">Projects</a>
-            <a href="companies.html" class="nav-link">Companies</a>
+            <a href="projects.html" class="nav-link active">For Students</a>
+            <a href="companies.html" class="nav-link">For Companies</a>
             <a href="about.html" class="nav-link">About</a>
             <div class="mt-8 flex flex-col gap-4">
                 <a href="login.html" class="btn btn-secondary w-full">Login</a>
@@ -124,7 +124,7 @@
                 <div class="bento-card hover-lift flex items-start justify-between" data-animate="fadeUp" style="--delay: 100ms;">
                     <div>
                         <p class="label mb-2">Applied</p>
-                        <p class="stat-value text-stone-900 dark:text-cream" data-counter="12">12</p>
+                        <p class="stat-value text-stone-900 dark:text-cream" data-counter="0">0</p>
                     </div>
                     <div class="icon-box">
                         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -136,7 +136,7 @@
                 <div class="bento-card hover-lift flex items-start justify-between" data-animate="fadeUp" style="--delay: 200ms;">
                     <div>
                         <p class="label mb-2">In Progress</p>
-                        <p class="stat-value text-coral" data-counter="3">3</p>
+                        <p class="stat-value text-coral" data-counter="0">0</p>
                     </div>
                     <div class="icon-box" style="background: rgba(59, 130, 246, 0.15); color: var(--color-coral);">
                         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -148,7 +148,7 @@
                 <div class="bento-card hover-lift flex items-start justify-between" data-animate="fadeUp" style="--delay: 300ms;">
                     <div>
                         <p class="label mb-2">Completed</p>
-                        <p class="stat-value text-sage" data-counter="5">5</p>
+                        <p class="stat-value text-sage" data-counter="0">0</p>
                     </div>
                     <div class="icon-box" style="background: rgba(6, 182, 212, 0.15); color: var(--color-sage);">
                         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -183,9 +183,9 @@
             </div>
 
             <!-- Project Cards - Magazine Style Grid -->
-            <div class="grid lg:grid-cols-12 gap-6">
+            <div id="projectsGrid" class="grid lg:grid-cols-12 gap-6">
                 <!-- Featured Project (8-col) -->
-                <div class="lg:col-span-8 bento-card bento-card-lg card-hover hover-lift relative overflow-hidden" data-animate="fadeUp" style="--delay: 100ms;">
+                <div class="lg:col-span-8 bento-card bento-card-lg card-hover hover-lift relative overflow-hidden cursor-pointer project-card" data-animate="fadeUp" style="--delay: 100ms;" data-project-title="Build a Landing Page Component" data-company-name="TechStart Inc">
                     <div class="absolute top-4 right-4">
                         <span class="px-3 py-1 bg-amber text-ink text-xs font-mono font-semibold rounded-full">Featured</span>
                     </div>
@@ -220,19 +220,19 @@
                                 $200
                             </span>
                         </div>
-                        <a href="#" class="btn btn-primary btn-sm arrow-right">
+                        <span class="btn btn-primary btn-sm arrow-right">
                             View Project
                             <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
                             </svg>
-                        </a>
+                        </span>
                     </div>
                 </div>
 
                 <!-- Compact Stack (4-col) -->
                 <div class="lg:col-span-4 flex flex-col gap-6">
                     <!-- Project Card 2 -->
-                    <div class="bento-card card-hover hover-lift" data-animate="fadeUp" style="--delay: 200ms;">
+                    <div class="bento-card card-hover hover-lift cursor-pointer project-card" data-animate="fadeUp" style="--delay: 200ms;" data-project-title="Customer Data Analysis" data-company-name="DataFlow">
                         <div class="flex items-center gap-3 mb-4">
                             <div class="avatar avatar-sm bg-coral/20 text-coral">D</div>
                             <div>
@@ -251,7 +251,7 @@
                     </div>
 
                     <!-- Project Card 3 -->
-                    <div class="bento-card card-dark card-hover hover-lift" data-animate="fadeUp" style="--delay: 300ms;">
+                    <div class="bento-card card-dark card-hover hover-lift cursor-pointer project-card" data-animate="fadeUp" style="--delay: 300ms;" data-project-title="Mobile App UI Redesign" data-company-name="DesignCo">
                         <div class="flex items-center gap-3 mb-4">
                             <div class="avatar avatar-sm" style="background: rgba(6, 182, 212, 0.2); color: var(--color-sage);">D</div>
                             <div>
@@ -271,7 +271,7 @@
                 </div>
 
                 <!-- Row of 3 cards -->
-                <div class="lg:col-span-4 bento-card card-hover hover-lift" data-animate="fadeUp" style="--delay: 400ms;">
+                <div class="lg:col-span-4 bento-card card-hover hover-lift cursor-pointer project-card" data-animate="fadeUp" style="--delay: 400ms;" data-project-title="Blog Content Creation" data-company-name="ContentHub">
                     <div class="flex items-center gap-3 mb-4">
                         <div class="avatar avatar-sm" style="background: rgba(59, 130, 246, 0.2); color: var(--color-coral);">C</div>
                         <div>
@@ -290,7 +290,7 @@
                     </div>
                 </div>
 
-                <div class="lg:col-span-4 bento-card card-hover hover-lift" data-animate="fadeUp" style="--delay: 500ms;">
+                <div class="lg:col-span-4 bento-card card-hover hover-lift cursor-pointer project-card" data-animate="fadeUp" style="--delay: 500ms;" data-project-title="API Documentation" data-company-name="CloudTech">
                     <div class="flex items-center gap-3 mb-4">
                         <div class="avatar avatar-sm bg-amber/20 text-amber">C</div>
                         <div>
@@ -309,7 +309,7 @@
                     </div>
                 </div>
 
-                <div class="lg:col-span-4 bento-card card-hover hover-lift" data-animate="fadeUp" style="--delay: 600ms;">
+                <div class="lg:col-span-4 bento-card card-hover hover-lift cursor-pointer project-card" data-animate="fadeUp" style="--delay: 600ms;" data-project-title="Social Media Campaign" data-company-name="GrowthLabs">
                     <div class="flex items-center gap-3 mb-4">
                         <div class="avatar avatar-sm" style="background: rgba(6, 182, 212, 0.2); color: var(--color-sage);">G</div>
                         <div>
@@ -368,5 +368,109 @@
     <!-- ExperienceLink Scripts -->
     <script src="js/projects-api.js"></script>
     <script src="js/applications-api.js"></script>
+
+    <!-- Project Modal -->
+    <div id="projectModal" class="modal-overlay hidden">
+        <div class="modal-content">
+            <button class="modal-close" aria-label="Close modal">&times;</button>
+            <h2 id="modalProjectTitle" class="font-display text-2xl font-semibold text-stone-900 dark:text-cream mb-2">Project Title</h2>
+            <p id="modalCompanyName" class="label mb-6">Company Name</p>
+            <div class="resume-upload-area">
+                <svg class="w-12 h-12 text-stone-400 mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12"/>
+                </svg>
+                <input type="file" id="resumeInput" accept=".pdf,.doc,.docx" disabled class="hidden">
+                <label for="resumeInput" class="text-stone-600 dark:text-stone-400">Upload your resume</label>
+                <p class="text-xs text-stone-400 mt-2">PDF, DOC, or DOCX (Max 5MB)</p>
+            </div>
+            <button class="btn btn-primary w-full btn-disabled" disabled>
+                Example Project - Coming Soon
+            </button>
+        </div>
+    </div>
+
+    <!-- Modal and Search JavaScript -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Modal functionality
+            const modal = document.getElementById('projectModal');
+            const modalTitle = document.getElementById('modalProjectTitle');
+            const modalCompany = document.getElementById('modalCompanyName');
+            const modalClose = modal.querySelector('.modal-close');
+            const projectCards = document.querySelectorAll('.project-card');
+
+            // Open modal when clicking a project card
+            projectCards.forEach(card => {
+                card.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    const title = card.dataset.projectTitle;
+                    const company = card.dataset.companyName;
+
+                    modalTitle.textContent = title;
+                    modalCompany.textContent = company;
+                    modal.classList.remove('hidden');
+                    document.body.style.overflow = 'hidden';
+                });
+            });
+
+            // Close modal on close button click
+            modalClose.addEventListener('click', () => {
+                modal.classList.add('hidden');
+                document.body.style.overflow = '';
+            });
+
+            // Close modal on overlay click
+            modal.addEventListener('click', (e) => {
+                if (e.target === modal) {
+                    modal.classList.add('hidden');
+                    document.body.style.overflow = '';
+                }
+            });
+
+            // Close modal on Escape key
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape' && !modal.classList.contains('hidden')) {
+                    modal.classList.add('hidden');
+                    document.body.style.overflow = '';
+                }
+            });
+
+            // Search functionality
+            const searchInput = document.querySelector('.form-input[placeholder="Search projects..."]');
+            const projectsGrid = document.getElementById('projectsGrid');
+
+            if (searchInput && projectsGrid) {
+                searchInput.addEventListener('input', (e) => {
+                    const searchTerm = e.target.value.toLowerCase().trim();
+                    const cards = projectsGrid.querySelectorAll('.project-card');
+
+                    cards.forEach(card => {
+                        const title = (card.dataset.projectTitle || '').toLowerCase();
+                        const company = (card.dataset.companyName || '').toLowerCase();
+                        const tags = Array.from(card.querySelectorAll('.tag')).map(tag => tag.textContent.toLowerCase()).join(' ');
+                        const description = card.querySelector('p.text-stone-600, p.text-stone-400')?.textContent.toLowerCase() || '';
+
+                        const matches = title.includes(searchTerm) ||
+                                        company.includes(searchTerm) ||
+                                        tags.includes(searchTerm) ||
+                                        description.includes(searchTerm);
+
+                        // Handle parent container for stacked cards
+                        const parent = card.parentElement;
+                        if (parent.classList.contains('flex') && parent.classList.contains('flex-col')) {
+                            // This card is in a stack, show/hide individually
+                            card.style.display = matches ? '' : 'none';
+                            // Check if all children in stack are hidden
+                            const siblings = parent.querySelectorAll('.project-card');
+                            const allHidden = Array.from(siblings).every(s => s.style.display === 'none');
+                            parent.style.display = allHidden ? 'none' : '';
+                        } else {
+                            card.style.display = matches ? '' : 'none';
+                        }
+                    });
+                });
+            }
+        });
+    </script>
 </body>
 </html>

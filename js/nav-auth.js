@@ -108,14 +108,15 @@
         container.id = 'userMenu';
         container.className = 'relative hidden md:block';
 
-        // Get initials for avatar
-        const name = profile?.full_name || 'User';
-        const initials = name.split(' ').map(n => n[0]).join('').toUpperCase().slice(0, 2);
+        // Get first name for display and initials for avatar
+        const fullName = profile?.full_name || '';
+        const firstName = fullName.split(' ')[0] || 'User';
+        const initials = fullName ? fullName.split(' ').map(n => n[0]).join('').toUpperCase().slice(0, 2) : 'U';
 
         container.innerHTML = `
             <button id="userMenuBtn" class="flex items-center gap-2 px-3 py-2 rounded-lg hover:bg-stone-100 dark:hover:bg-charcoal transition-colors">
                 <div class="avatar avatar-sm bg-amber/20 text-amber">${initials}</div>
-                <span class="text-stone-700 dark:text-stone-300 text-sm font-medium max-w-[100px] truncate">${name}</span>
+                <span class="text-stone-700 dark:text-stone-300 text-sm font-medium max-w-[100px] truncate">${firstName}</span>
                 <svg class="w-4 h-4 text-stone-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
                 </svg>

@@ -333,7 +333,9 @@ class CharacterCount {
 
 document.addEventListener('DOMContentLoaded', () => {
   // Initialize all animation/interaction modules
+  // Merge with existing ExperienceLink (e.g., Supabase client) instead of overwriting
   window.ExperienceLink = {
+    ...window.ExperienceLink, // Preserve existing properties (Auth, Profiles, etc.)
     scrollAnimator: new ScrollAnimator(),
     themeManager: new ThemeManager(),
     mobileMenu: new MobileMenu(),

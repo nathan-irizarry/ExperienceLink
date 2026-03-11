@@ -174,7 +174,10 @@
                 </div>
 
                 <!-- Form -->
-                <form class="space-y-5">
+                <form id="signupForm" class="space-y-5">
+                    <!-- Hidden account type field -->
+                    <input type="hidden" id="accountType" value="student">
+
                     <!-- Name -->
                     <div class="form-group">
                         <label for="name" class="form-label" id="nameLabel">Full Name</label>
@@ -264,6 +267,10 @@
     </div>
 
     <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="js/supabase-client.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/auth-guard.js"></script>
     <script src="js/animations.js"></script>
     <script>
         // Custom tab handling for signup form
@@ -274,6 +281,7 @@
             const companyPanel = document.querySelector('[data-tab-panel="company"]');
             const nameLabel = document.getElementById('nameLabel');
             const nameInput = document.getElementById('name');
+            const accountTypeInput = document.getElementById('accountType');
 
             studentTab.addEventListener('click', () => {
                 studentTab.classList.add('active');
@@ -282,6 +290,7 @@
                 companyPanel.classList.add('hidden');
                 nameLabel.textContent = 'Full Name';
                 nameInput.placeholder = 'John Doe';
+                if (accountTypeInput) accountTypeInput.value = 'student';
             });
 
             companyTab.addEventListener('click', () => {
@@ -291,8 +300,11 @@
                 studentPanel.classList.add('hidden');
                 nameLabel.textContent = 'Company Name';
                 nameInput.placeholder = 'Acme Inc.';
+                if (accountTypeInput) accountTypeInput.value = 'company';
             });
         });
     </script>
+    <script src="js/signup-page.js"></script>
+
 </body>
 </html>

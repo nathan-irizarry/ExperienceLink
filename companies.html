@@ -338,8 +338,21 @@
     </footer>
 
     <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="js/supabase-client.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/auth-guard.js"></script>
+    <script src="js/nav-auth.js"></script>
     <script src="js/animations.js"></script>
     <script>
+        // Protect this page - require company role
+        (async function() {
+            const AuthGuard = window.ExperienceLink?.AuthGuard;
+            if (AuthGuard) {
+                await AuthGuard.requireRole('company', 'projects.html');
+            }
+        })();
+
         // Tab switching for companies page
         document.addEventListener('DOMContentLoaded', () => {
             const tabs = document.querySelectorAll('[data-tab]');

@@ -341,8 +341,22 @@
     </footer>
 
     <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="js/supabase-client.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/auth-guard.js"></script>
+    <script src="js/nav-auth.js"></script>
     <script src="js/animations.js"></script>
     <script>
+        // Protect this page - require student role
+        (async function() {
+            const AuthGuard = window.ExperienceLink?.AuthGuard;
+            if (AuthGuard) {
+                // Allow both students and companies to view projects, but show different UI
+                await AuthGuard.requireAuth();
+            }
+        })();
+
         // Filter pill toggle
         document.querySelectorAll('.filter-pill').forEach(pill => {
             pill.addEventListener('click', () => {
@@ -350,5 +364,9 @@
             });
         });
     </script>
+
+    <!-- ExperienceLink Scripts -->
+    <script src="js/projects-api.js"></script>
+    <script src="js/applications-api.js"></script>
 </body>
 </html>

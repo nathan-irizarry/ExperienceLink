@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Authenticating - ExperienceLink</title>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="css/tokens.css">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/components.css">
+
+    <!-- Tailwind for utilities -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        ink: '#0f0f23',
+                        charcoal: '#1a1a2e',
+                        amber: '#1743f0',
+                        coral: '#3b82f6',
+                        sage: '#06b6d4',
+                        cream: '#faf8f5',
+                        stone: {
+                            100: '#f5f4f2',
+                            200: '#e8e6e1',
+                            300: '#d4d1ca',
+                            400: '#a8a49d',
+                            500: '#8a8680',
+                            600: '#6b6860',
+                            700: '#4a4840',
+                            800: '#37352f',
+                            900: '#2c2a27',
+                        }
+                    },
+                    fontFamily: {
+                        'display': ['Cormorant Garamond', 'Georgia', 'serif'],
+                        'body': ['Plus Jakarta Sans', 'system-ui', 'sans-serif'],
+                        'mono': ['JetBrains Mono', 'Consolas', 'monospace'],
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="font-body bg-cream dark:bg-ink transition-colors duration-300 min-h-screen flex items-center justify-center">
+    <div class="container max-w-md">
+        <!-- Loading State -->
+        <div id="loadingState" class="text-center">
+            <div class="w-16 h-16 bg-amber rounded-xl flex items-center justify-center mx-auto mb-6">
+                <svg class="w-8 h-8 text-ink animate-pulse" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/>
+                </svg>
+            </div>
+            <h1 class="font-display text-2xl text-stone-900 dark:text-cream mb-4">Completing Sign In...</h1>
+            <p class="text-stone-600 dark:text-stone-400">Please wait while we authenticate your account.</p>
+            <div class="mt-8">
+                <div class="w-8 h-8 border-4 border-amber border-t-transparent rounded-full animate-spin mx-auto"></div>
+            </div>
+        </div>
+
+        <!-- Role Selection Modal (for new OAuth users) -->
+        <div id="roleSelectionModal" class="hidden">
+            <div class="bento-card bento-card-lg text-center">
+                <div class="w-16 h-16 bg-amber rounded-xl flex items-center justify-center mx-auto mb-6">
+                    <svg class="w-8 h-8 text-ink" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/>
+                    </svg>
+                </div>
+                <h1 class="font-display text-2xl text-stone-900 dark:text-cream mb-4">Welcome to ExperienceLink!</h1>
+                <p class="text-stone-600 dark:text-stone-400 mb-8">Please select your account type to complete registration.</p>
+
+                <form id="roleSelectionForm" class="space-y-6">
+                    <!-- Account Type Selection -->
+                    <div class="grid grid-cols-2 gap-4">
+                        <label class="cursor-pointer">
+                            <input type="radio" name="role" value="student" class="sr-only peer" checked>
+                            <div class="bento-card p-6 text-center border-2 border-transparent peer-checked:border-amber transition-all">
+                                <div class="icon-box mx-auto mb-4">
+                                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l9-5-9-5-9 5 9 5z"/>
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z"/>
+                                    </svg>
+                                </div>
+                                <p class="font-medium text-stone-900 dark:text-cream">Student</p>
+                            </div>
+                        </label>
+                        <label class="cursor-pointer">
+                            <input type="radio" name="role" value="company" class="sr-only peer">
+                            <div class="bento-card p-6 text-center border-2 border-transparent peer-checked:border-amber transition-all">
+                                <div class="icon-box mx-auto mb-4">
+                                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/>
+                                    </svg>
+                                </div>
+                                <p class="font-medium text-stone-900 dark:text-cream">Company</p>
+                            </div>
+                        </label>
+                    </div>
+
+                    <!-- Dynamic Field (Student) -->
+                    <div id="studentField" class="form-group">
+                        <label for="university" class="form-label">University</label>
+                        <input type="text" id="university" placeholder="e.g., Stanford University" class="form-input">
+                    </div>
+
+                    <!-- Dynamic Field (Company) -->
+                    <div id="companyFields" class="hidden space-y-4">
+                        <div class="form-group">
+                            <label for="companyName" class="form-label">Company Name</label>
+                            <input type="text" id="companyName" placeholder="e.g., Acme Inc." class="form-input">
+                        </div>
+                        <div class="form-group">
+                            <label for="industry" class="form-label">Industry</label>
+                            <input type="text" id="industry" placeholder="e.g., Technology, Healthcare" class="form-input">
+                        </div>
+                    </div>
+
+                    <!-- Error Message -->
+                    <div id="roleError" class="hidden p-4 bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-800 rounded-lg text-red-600 dark:text-red-400 text-sm"></div>
+
+                    <!-- Submit Button -->
+                    <button type="submit" class="btn btn-primary w-full">
+                        Complete Registration
+                    </button>
+                </form>
+            </div>
+        </div>
+
+        <!-- Error State -->
+        <div id="errorState" class="hidden text-center">
+            <div class="w-16 h-16 bg-red-100 dark:bg-red-900/20 rounded-xl flex items-center justify-center mx-auto mb-6">
+                <svg class="w-8 h-8 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/>
+                </svg>
+            </div>
+            <h1 class="font-display text-2xl text-stone-900 dark:text-cream mb-4">Authentication Error</h1>
+            <p id="errorMessage" class="text-stone-600 dark:text-stone-400 mb-8">Something went wrong during authentication.</p>
+            <a href="login.html" class="btn btn-primary">
+                Return to Login
+            </a>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="js/supabase-client.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/profiles.js"></script>
+    <script src="js/auth-guard.js"></script>
+    <script src="js/auth-callback.js"></script>
+</body>
+</html>

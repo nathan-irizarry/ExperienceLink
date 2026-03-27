@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,7 +9,9 @@
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
 
     <!-- Styles -->
     <link rel="stylesheet" href="css/tokens.css">
@@ -20,28 +23,8 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
-            darkMode: 'class',
             theme: {
                 extend: {
-                    colors: {
-                        ink: '#0f0f23',
-                        charcoal: '#1a1a2e',
-                        amber: '#1743f0',
-                        coral: '#3b82f6',
-                        sage: '#06b6d4',
-                        cream: '#faf8f5',
-                        stone: {
-                            100: '#f5f4f2',
-                            200: '#e8e6e1',
-                            300: '#d4d1ca',
-                            400: '#a8a49d',
-                            500: '#8a8680',
-                            600: '#6b6860',
-                            700: '#4a4840',
-                            800: '#37352f',
-                            900: '#2c2a27',
-                        }
-                    },
                     fontFamily: {
                         'display': ['Cormorant Garamond', 'Georgia', 'serif'],
                         'body': ['Plus Jakarta Sans', 'system-ui', 'sans-serif'],
@@ -52,7 +35,8 @@
         }
     </script>
 </head>
-<body class="font-body bg-cream dark:bg-ink transition-colors duration-300 grain">
+
+<body class="font-body bg-cream transition-colors duration-300 grain">
     <!-- Navigation -->
     <nav class="nav">
         <div class="nav-container">
@@ -60,7 +44,7 @@
             <a href="index.html" class="nav-logo">
                 <div class="nav-logo-mark">
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/>
+                        <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" />
                     </svg>
                 </div>
                 <span>ExperienceLink</span>
@@ -76,21 +60,14 @@
 
             <!-- Right Side -->
             <div class="nav-actions">
-                <button data-theme-toggle class="theme-toggle" aria-label="Toggle dark mode">
-                    <svg class="icon-sun" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"/>
-                    </svg>
-                    <svg class="icon-moon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"/>
-                    </svg>
-                </button>
                 <a href="login.html" class="nav-link hidden md:block">Login</a>
                 <a href="signup.html" class="btn btn-primary hidden md:flex">Get Started</a>
 
                 <!-- Mobile Menu Button -->
                 <button data-mobile-menu-btn class="nav-mobile-btn md:hidden" aria-label="Open menu">
                     <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M4 6h16M4 12h16M4 18h16" />
                     </svg>
                 </button>
             </div>
@@ -121,38 +98,44 @@
 
             <!-- Stats Cards -->
             <div class="grid md:grid-cols-3 gap-6 mb-12">
-                <div class="bento-card hover-lift flex items-start justify-between" data-animate="fadeUp" style="--delay: 100ms;">
+                <div class="bento-card hover-lift flex items-start justify-between" data-animate="fadeUp"
+                    style="--delay: 100ms;">
                     <div>
                         <p class="label mb-2">Applied</p>
-                        <p class="stat-value text-stone-900 dark:text-cream" data-counter="0">0</p>
+                        <p class="stat-value text-coral" data-counter="0">0</p>
                     </div>
                     <div class="icon-box">
                         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                         </svg>
                     </div>
                 </div>
 
-                <div class="bento-card hover-lift flex items-start justify-between" data-animate="fadeUp" style="--delay: 200ms;">
+                <div class="bento-card hover-lift flex items-start justify-between" data-animate="fadeUp"
+                    style="--delay: 200ms;">
                     <div>
                         <p class="label mb-2">In Progress</p>
                         <p class="stat-value text-coral" data-counter="0">0</p>
                     </div>
-                    <div class="icon-box" style="background: rgba(59, 130, 246, 0.15); color: var(--color-coral);">
+                    <div class="icon-box">
                         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
                         </svg>
                     </div>
                 </div>
 
-                <div class="bento-card hover-lift flex items-start justify-between" data-animate="fadeUp" style="--delay: 300ms;">
+                <div class="bento-card hover-lift flex items-start justify-between" data-animate="fadeUp"
+                    style="--delay: 300ms;">
                     <div>
                         <p class="label mb-2">Completed</p>
-                        <p class="stat-value text-sage" data-counter="0">0</p>
+                        <p class="stat-value text-coral" data-counter="0">0</p>
                     </div>
-                    <div class="icon-box" style="background: rgba(6, 182, 212, 0.15); color: var(--color-sage);">
+                    <div class="icon-box">
                         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                         </svg>
                     </div>
                 </div>
@@ -162,8 +145,10 @@
             <div class="bento-card mb-12" data-animate="fadeUp" style="--delay: 400ms;">
                 <!-- Search Bar -->
                 <div class="relative mb-6">
-                    <svg class="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-stone-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+                    <svg class="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-stone-400" fill="none"
+                        stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
                     </svg>
                     <input type="text" placeholder="Search projects..." class="form-input pl-12">
                 </div>
@@ -185,19 +170,25 @@
             <!-- Project Cards - Magazine Style Grid -->
             <div id="projectsGrid" class="grid lg:grid-cols-12 gap-6">
                 <!-- Featured Project (8-col) -->
-                <div class="lg:col-span-8 bento-card bento-card-lg card-hover hover-lift relative overflow-hidden cursor-pointer project-card" data-animate="fadeUp" style="--delay: 100ms;" data-project-title="Build a Landing Page Component" data-company-name="TechStart Inc">
+                <div class="lg:col-span-8 bento-card bento-card-lg card-hover hover-lift relative overflow-hidden cursor-pointer project-card"
+                    data-animate="fadeUp" style="--delay: 100ms;" data-project-title="Build a Landing Page Component"
+                    data-company-name="TechStart Inc">
                     <div class="absolute top-4 right-4">
-                        <span class="px-3 py-1 bg-amber text-ink text-xs font-mono font-semibold rounded-full">Featured</span>
+                        <span
+                            class="px-3 py-1 bg-amber text-ink text-xs font-mono font-semibold rounded-full">Featured</span>
                     </div>
                     <div class="flex items-center gap-4 mb-6">
-                        <div class="avatar bg-amber/20 text-amber">T</div>
+                        <div class="avatar" style="background: rgba(59, 130, 246, 0.2); color: var(--color-coral);">T
+                        </div>
                         <div>
                             <p class="label">TechStart Inc</p>
-                            <h3 class="text-xl font-display font-semibold text-stone-900 dark:text-cream">Build a Landing Page Component</h3>
+                            <h3 class="text-xl font-display font-semibold text-stone-900">Build a
+                                Landing Page Component</h3>
                         </div>
                     </div>
-                    <p class="text-stone-600 dark:text-stone-400 mb-6 text-lg leading-relaxed">
-                        Create a responsive landing page component for our new product launch using React and Tailwind CSS. This project involves designing modern UI elements and implementing smooth animations.
+                    <p class="text-stone-600 mb-6 text-lg leading-relaxed">
+                        Create a responsive landing page component for our new product launch using React and Tailwind
+                        CSS. This project involves designing modern UI elements and implementing smooth animations.
                     </p>
                     <div class="flex flex-wrap gap-2 mb-6">
                         <span class="tag">React</span>
@@ -205,17 +196,19 @@
                         <span class="tag">TypeScript</span>
                         <span class="tag">Animation</span>
                     </div>
-                    <div class="flex items-center justify-between pt-6 border-t border-stone-200 dark:border-charcoal">
+                    <div class="flex items-center justify-between pt-6 border-t border-stone-200">
                         <div class="flex items-center gap-6">
                             <span class="flex items-center gap-2 text-stone-500 font-mono text-sm">
                                 <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
                                 </svg>
                                 2 weeks
                             </span>
                             <span class="flex items-center gap-2 text-amber font-mono text-sm font-semibold">
                                 <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                                 </svg>
                                 $200
                             </span>
@@ -223,7 +216,8 @@
                         <span class="btn btn-primary btn-sm arrow-right">
                             View Project
                             <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M17 8l4 4m0 0l-4 4m4-4H3" />
                             </svg>
                         </span>
                     </div>
@@ -232,12 +226,16 @@
                 <!-- Compact Stack (4-col) -->
                 <div class="lg:col-span-4 flex flex-col gap-6">
                     <!-- Project Card 2 -->
-                    <div class="bento-card card-hover hover-lift cursor-pointer project-card" data-animate="fadeUp" style="--delay: 200ms;" data-project-title="Customer Data Analysis" data-company-name="DataFlow">
+                    <div class="bento-card card-hover hover-lift cursor-pointer project-card" data-animate="fadeUp"
+                        style="--delay: 200ms;" data-project-title="Customer Data Analysis"
+                        data-company-name="DataFlow">
                         <div class="flex items-center gap-3 mb-4">
-                            <div class="avatar avatar-sm bg-coral/20 text-coral">D</div>
+                            <div class="avatar avatar-sm"
+                                style="background: rgba(59, 130, 246, 0.2); color: var(--color-coral);">D</div>
                             <div>
                                 <p class="label text-xs">DataFlow</p>
-                                <h3 class="font-display font-semibold text-stone-900 dark:text-cream">Customer Data Analysis</h3>
+                                <h3 class="font-display font-semibold text-stone-900">Customer Data
+                                    Analysis</h3>
                             </div>
                         </div>
                         <div class="flex flex-wrap gap-2 mb-4">
@@ -251,9 +249,12 @@
                     </div>
 
                     <!-- Project Card 3 -->
-                    <div class="bento-card card-dark card-hover hover-lift cursor-pointer project-card" data-animate="fadeUp" style="--delay: 300ms;" data-project-title="Mobile App UI Redesign" data-company-name="DesignCo">
+                    <div class="bento-card card-dark card-hover hover-lift cursor-pointer project-card"
+                        data-animate="fadeUp" style="--delay: 300ms;" data-project-title="Mobile App UI Redesign"
+                        data-company-name="DesignCo">
                         <div class="flex items-center gap-3 mb-4">
-                            <div class="avatar avatar-sm" style="background: rgba(6, 182, 212, 0.2); color: var(--color-sage);">D</div>
+                            <div class="avatar avatar-sm"
+                                style="background: rgba(59, 130, 246, 0.2); color: var(--color-coral);">D</div>
                             <div>
                                 <p class="label text-xs text-stone-400">DesignCo</p>
                                 <h3 class="font-display font-semibold text-cream">Mobile App UI Redesign</h3>
@@ -271,15 +272,20 @@
                 </div>
 
                 <!-- Row of 3 cards -->
-                <div class="lg:col-span-4 bento-card card-hover hover-lift cursor-pointer project-card" data-animate="fadeUp" style="--delay: 400ms;" data-project-title="Blog Content Creation" data-company-name="ContentHub">
+                <div class="lg:col-span-4 bento-card card-hover hover-lift cursor-pointer project-card"
+                    data-animate="fadeUp" style="--delay: 400ms;" data-project-title="Blog Content Creation"
+                    data-company-name="ContentHub">
                     <div class="flex items-center gap-3 mb-4">
-                        <div class="avatar avatar-sm" style="background: rgba(59, 130, 246, 0.2); color: var(--color-coral);">C</div>
+                        <div class="avatar avatar-sm"
+                            style="background: rgba(59, 130, 246, 0.2); color: var(--color-coral);">C</div>
                         <div>
                             <p class="label text-xs">ContentHub</p>
-                            <h3 class="font-display font-semibold text-stone-900 dark:text-cream">Blog Content Creation</h3>
+                            <h3 class="font-display font-semibold text-stone-900">Blog Content Creation
+                            </h3>
                         </div>
                     </div>
-                    <p class="text-stone-600 dark:text-stone-400 text-sm mb-4">Write engaging blog posts about technology trends and digital transformation.</p>
+                    <p class="text-stone-600 text-sm mb-4">Write engaging blog posts about
+                        technology trends and digital transformation.</p>
                     <div class="flex flex-wrap gap-2 mb-4">
                         <span class="tag">Writing</span>
                         <span class="tag">SEO</span>
@@ -290,15 +296,19 @@
                     </div>
                 </div>
 
-                <div class="lg:col-span-4 bento-card card-hover hover-lift cursor-pointer project-card" data-animate="fadeUp" style="--delay: 500ms;" data-project-title="API Documentation" data-company-name="CloudTech">
+                <div class="lg:col-span-4 bento-card card-hover hover-lift cursor-pointer project-card"
+                    data-animate="fadeUp" style="--delay: 500ms;" data-project-title="API Documentation"
+                    data-company-name="CloudTech">
                     <div class="flex items-center gap-3 mb-4">
-                        <div class="avatar avatar-sm bg-amber/20 text-amber">C</div>
+                        <div class="avatar avatar-sm"
+                            style="background: rgba(59, 130, 246, 0.2); color: var(--color-coral);">C</div>
                         <div>
                             <p class="label text-xs">CloudTech</p>
-                            <h3 class="font-display font-semibold text-stone-900 dark:text-cream">API Documentation</h3>
+                            <h3 class="font-display font-semibold text-stone-900">API Documentation</h3>
                         </div>
                     </div>
-                    <p class="text-stone-600 dark:text-stone-400 text-sm mb-4">Create comprehensive API documentation for our developer platform.</p>
+                    <p class="text-stone-600 text-sm mb-4">Create comprehensive API documentation
+                        for our developer platform.</p>
                     <div class="flex flex-wrap gap-2 mb-4">
                         <span class="tag">Technical Writing</span>
                         <span class="tag">APIs</span>
@@ -309,15 +319,20 @@
                     </div>
                 </div>
 
-                <div class="lg:col-span-4 bento-card card-hover hover-lift cursor-pointer project-card" data-animate="fadeUp" style="--delay: 600ms;" data-project-title="Social Media Campaign" data-company-name="GrowthLabs">
+                <div class="lg:col-span-4 bento-card card-hover hover-lift cursor-pointer project-card"
+                    data-animate="fadeUp" style="--delay: 600ms;" data-project-title="Social Media Campaign"
+                    data-company-name="GrowthLabs">
                     <div class="flex items-center gap-3 mb-4">
-                        <div class="avatar avatar-sm" style="background: rgba(6, 182, 212, 0.2); color: var(--color-sage);">G</div>
+                        <div class="avatar avatar-sm"
+                            style="background: rgba(59, 130, 246, 0.2); color: var(--color-coral);">G</div>
                         <div>
                             <p class="label text-xs">GrowthLabs</p>
-                            <h3 class="font-display font-semibold text-stone-900 dark:text-cream">Social Media Campaign</h3>
+                            <h3 class="font-display font-semibold text-stone-900">Social Media Campaign
+                            </h3>
                         </div>
                     </div>
-                    <p class="text-stone-600 dark:text-stone-400 text-sm mb-4">Plan and create content for a social media marketing campaign.</p>
+                    <p class="text-stone-600 text-sm mb-4">Plan and create content for a social
+                        media marketing campaign.</p>
                     <div class="flex flex-wrap gap-2 mb-4">
                         <span class="tag">Marketing</span>
                         <span class="tag">Social Media</span>
@@ -348,19 +363,51 @@
     <script src="js/nav-auth.js"></script>
     <script src="js/animations.js"></script>
     <script>
-        // Protect this page - require student role
-        (async function() {
-            const AuthGuard = window.ExperienceLink?.AuthGuard;
-            if (AuthGuard) {
-                // Allow both students and companies to view projects, but show different UI
-                await AuthGuard.requireAuth();
-            }
-        })();
+            // Protect this page - require student role
+            (async function () {
+                const AuthGuard = window.ExperienceLink?.AuthGuard;
+                if (AuthGuard) {
+                    // Allow both students and companies to view projects, but show different UI
+                    await AuthGuard.requireAuth();
+                }
+            })();
 
-        // Filter pill toggle
-        document.querySelectorAll('.filter-pill').forEach(pill => {
+        // Filter pill toggle with actual filtering
+        const filterPills = document.querySelectorAll('.filter-pill');
+        const projectsGridForFilter = document.getElementById('projectsGrid');
+
+        function filterProjects() {
+            const activeFilters = Array.from(filterPills)
+                .filter(pill => pill.classList.contains('active'))
+                .map(pill => pill.textContent.toLowerCase().trim());
+
+            const cards = projectsGridForFilter.querySelectorAll('.project-card');
+
+            cards.forEach(card => {
+                const cardTags = Array.from(card.querySelectorAll('.tag'))
+                    .map(tag => tag.textContent.toLowerCase().trim());
+
+                // Show card if no filters active OR if card has any matching tag
+                const matches = activeFilters.length === 0 ||
+                    activeFilters.some(filter => cardTags.includes(filter));
+
+                // Handle parent container (for stacked cards)
+                const parent = card.parentElement;
+                if (parent.classList.contains('flex') && parent.classList.contains('flex-col')) {
+                    card.style.display = matches ? '' : 'none';
+                    const siblings = parent.querySelectorAll('.project-card');
+                    const allHidden = Array.from(siblings).every(s => s.style.display === 'none');
+                    parent.style.display = allHidden ? 'none' : '';
+                } else {
+                    card.style.display = matches ? '' : 'none';
+                }
+            });
+        }
+
+        filterPills.forEach(pill => {
             pill.addEventListener('click', () => {
                 pill.classList.toggle('active');
+                filterProjects();
             });
         });
     </script>
@@ -373,14 +420,17 @@
     <div id="projectModal" class="modal-overlay hidden">
         <div class="modal-content">
             <button class="modal-close" aria-label="Close modal">&times;</button>
-            <h2 id="modalProjectTitle" class="font-display text-2xl font-semibold text-stone-900 dark:text-cream mb-2">Project Title</h2>
+            <h2 id="modalProjectTitle" class="font-display text-2xl font-semibold text-stone-900 mb-2">
+                Project Title</h2>
             <p id="modalCompanyName" class="label mb-6">Company Name</p>
             <div class="resume-upload-area">
-                <svg class="w-12 h-12 text-stone-400 mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12"/>
+                <svg class="w-12 h-12 text-stone-400 mx-auto mb-4" fill="none" stroke="currentColor"
+                    viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12" />
                 </svg>
                 <input type="file" id="resumeInput" accept=".pdf,.doc,.docx" disabled class="hidden">
-                <label for="resumeInput" class="text-stone-600 dark:text-stone-400">Upload your resume</label>
+                <label for="resumeInput" class="text-stone-600">Upload your resume</label>
                 <p class="text-xs text-stone-400 mt-2">PDF, DOC, or DOCX (Max 5MB)</p>
             </div>
             <button class="btn btn-primary w-full btn-disabled" disabled>
@@ -451,9 +501,9 @@
                         const description = card.querySelector('p.text-stone-600, p.text-stone-400')?.textContent.toLowerCase() || '';
 
                         const matches = title.includes(searchTerm) ||
-                                        company.includes(searchTerm) ||
-                                        tags.includes(searchTerm) ||
-                                        description.includes(searchTerm);
+                            company.includes(searchTerm) ||
+                            tags.includes(searchTerm) ||
+                            description.includes(searchTerm);
 
                         // Handle parent container for stacked cards
                         const parent = card.parentElement;
@@ -473,4 +523,5 @@
         });
     </script>
 </body>
+
 </html>

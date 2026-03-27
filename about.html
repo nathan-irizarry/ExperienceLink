@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,7 +9,9 @@
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
 
     <!-- Styles -->
     <link rel="stylesheet" href="css/tokens.css">
@@ -20,28 +23,8 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
-            darkMode: 'class',
             theme: {
                 extend: {
-                    colors: {
-                        ink: '#0f0f23',
-                        charcoal: '#1a1a2e',
-                        amber: '#1743f0',
-                        coral: '#3b82f6',
-                        sage: '#06b6d4',
-                        cream: '#faf8f5',
-                        stone: {
-                            100: '#f5f4f2',
-                            200: '#e8e6e1',
-                            300: '#d4d1ca',
-                            400: '#a8a49d',
-                            500: '#8a8680',
-                            600: '#6b6860',
-                            700: '#4a4840',
-                            800: '#37352f',
-                            900: '#2c2a27',
-                        }
-                    },
                     fontFamily: {
                         'display': ['Cormorant Garamond', 'Georgia', 'serif'],
                         'body': ['Plus Jakarta Sans', 'system-ui', 'sans-serif'],
@@ -52,7 +35,8 @@
         }
     </script>
 </head>
-<body class="font-body bg-cream dark:bg-ink transition-colors duration-300 grain">
+
+<body class="font-body bg-cream transition-colors duration-300 grain">
     <!-- Navigation -->
     <nav class="nav">
         <div class="nav-container">
@@ -60,7 +44,7 @@
             <a href="index.html" class="nav-logo">
                 <div class="nav-logo-mark">
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/>
+                        <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" />
                     </svg>
                 </div>
                 <span>ExperienceLink</span>
@@ -76,21 +60,14 @@
 
             <!-- Right Side -->
             <div class="nav-actions">
-                <button data-theme-toggle class="theme-toggle" aria-label="Toggle dark mode">
-                    <svg class="icon-sun" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"/>
-                    </svg>
-                    <svg class="icon-moon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"/>
-                    </svg>
-                </button>
                 <a href="login.html" class="nav-link hidden md:block">Login</a>
                 <a href="signup.html" class="btn btn-primary hidden md:flex">Get Started</a>
 
                 <!-- Mobile Menu Button -->
                 <button data-mobile-menu-btn class="nav-mobile-btn md:hidden" aria-label="Open menu">
                     <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M4 6h16M4 12h16M4 18h16" />
                     </svg>
                 </button>
             </div>
@@ -116,25 +93,32 @@
             <div class="section-header mb-16" data-animate="fadeUp">
                 <p class="section-label">About Us</p>
                 <h1 class="section-title">Our Values</h1>
-                <p class="section-subtitle max-w-xl">Empowering students to build their future through real-world experience</p>
+                <p class="section-subtitle max-w-xl">Empowering students to build their future through real-world
+                    experience</p>
             </div>
 
             <!-- Values Bento Grid -->
             <div class="grid lg:grid-cols-12 gap-6 mb-24">
                 <!-- Our Mission - Large Card -->
-                <div class="lg:col-span-7 bento-card bento-card-lg card-dark hover-lift relative overflow-hidden" data-animate="fadeUp" style="--delay: 100ms;">
+                <div class="lg:col-span-7 bento-card bento-card-lg card-dark hover-lift relative overflow-hidden"
+                    data-animate="fadeUp" style="--delay: 100ms;">
                     <!-- Decorative gradient -->
-                    <div class="absolute top-0 right-0 w-64 h-64 bg-gradient-to-br from-amber/20 to-transparent rounded-full blur-3xl"></div>
+                    <div
+                        class="absolute top-0 right-0 w-64 h-64 bg-gradient-to-br from-amber/20 to-transparent rounded-full blur-3xl">
+                    </div>
 
                     <div class="relative z-10">
-                        <div class="icon-box icon-box-lg mb-6" style="background: rgba(23, 67, 240, 0.2);">
+                        <div class="icon-box icon-box-lg mb-6">
                             <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/>
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
                             </svg>
                         </div>
                         <h3 class="text-2xl font-display font-semibold text-cream mb-4">Our Mission</h3>
                         <p class="text-stone-400 text-lg leading-relaxed mb-6">
-                            To bridge the gap between academic learning and real-world experience by connecting students with meaningful project opportunities that build skills, portfolios, and professional networks.
+                            To bridge the gap between academic learning and real-world experience by connecting students
+                            with meaningful project opportunities that build skills, portfolios, and professional
+                            networks.
                         </p>
                         <blockquote class="pull-quote text-cream/90 border-amber">
                             "Every student deserves the chance to prove themselves through real work."
@@ -148,22 +132,27 @@
                     <div class="bento-card hover-lift" data-animate="fadeUp" style="--delay: 200ms;">
                         <div class="icon-box mb-4">
                             <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/>
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
                             </svg>
                         </div>
-                        <h3 class="text-xl font-display font-semibold text-stone-900 dark:text-cream mb-2">Community First</h3>
-                        <p class="text-stone-600 dark:text-stone-400">We believe in building a supportive community where students and companies can grow together through collaboration and mutual benefit.</p>
+                        <h3 class="text-xl font-display font-semibold text-stone-900 mb-2">Community
+                            First</h3>
+                        <p class="text-stone-600">We believe in building a supportive community
+                            where students and companies can grow together through collaboration and mutual benefit.</p>
                     </div>
 
                     <!-- Innovation -->
                     <div class="bento-card card-amber hover-lift" data-animate="fadeUp" style="--delay: 300ms;">
-                        <div class="icon-box mb-4" style="background: rgba(15, 15, 35, 0.2); color: var(--color-ink);">
+                        <div class="icon-box mb-4">
                             <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M13 10V3L4 14h7v7l9-11h-7z" />
                             </svg>
                         </div>
                         <h3 class="text-xl font-display font-semibold text-ink mb-2">Innovation</h3>
-                        <p class="text-stone-800">We're constantly evolving our platform to better serve students and companies in the ever-changing job market.</p>
+                        <p class="text-stone-800">We're constantly evolving our platform to better serve students and
+                            companies in the ever-changing job market.</p>
                     </div>
                 </div>
 
@@ -171,22 +160,25 @@
                 <div class="lg:col-span-12 bento-card hover-lift" data-animate="fadeUp" style="--delay: 400ms;">
                     <div class="grid md:grid-cols-2 gap-8 items-center">
                         <div>
-                            <div class="icon-box icon-box-lg mb-6" style="background: rgba(6, 182, 212, 0.15); color: var(--color-sage);">
+                            <div class="icon-box icon-box-lg mb-6">
                                 <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/>
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
                                 </svg>
                             </div>
-                            <h3 class="text-2xl font-display font-semibold text-stone-900 dark:text-cream mb-4">Student Success</h3>
-                            <p class="text-stone-600 dark:text-stone-400 text-lg leading-relaxed">
-                                Every feature we build is designed with student success in mind, helping them prepare for successful careers through hands-on experience and mentorship.
+                            <h3 class="text-2xl font-display font-semibold text-stone-900 mb-4">Student
+                                Success</h3>
+                            <p class="text-stone-600 text-lg leading-relaxed">
+                                Every feature we build is designed with student success in mind, helping them prepare
+                                for successful careers through hands-on experience and mentorship.
                             </p>
                         </div>
                         <div class="grid grid-cols-2 gap-4">
-                            <div class="bento-card bg-stone-100 dark:bg-charcoal p-6">
-                                <p class="stat-value text-sage" data-counter="95" data-suffix="%">95%</p>
+                            <div class="bento-card bg-stone-100 p-6">
+                                <p class="stat-value text-coral" data-counter="95" data-suffix="%">95%</p>
                                 <p class="label mt-2">Success Rate</p>
                             </div>
-                            <div class="bento-card bg-stone-100 dark:bg-charcoal p-6">
+                            <div class="bento-card bg-stone-100 p-6">
                                 <p class="stat-value text-coral" data-counter="4.9" data-suffix="/5">4.9/5</p>
                                 <p class="label mt-2">Satisfaction</p>
                             </div>
@@ -199,28 +191,33 @@
             <section class="section bg-ink rounded-3xl relative overflow-hidden" data-animate="fadeUp">
                 <!-- Decorative shapes -->
                 <div class="absolute top-10 left-10 w-32 h-32 border-2 border-amber/20 rounded-full"></div>
-                <div class="absolute bottom-10 right-10 w-24 h-24 border-2 border-sage/20 rounded-full"></div>
+                <div class="absolute bottom-10 right-10 w-24 h-24 border-2 border-coral/20 rounded-full"></div>
 
                 <div class="relative z-10 text-center px-6">
-                    <h2 class="font-display text-4xl md:text-5xl font-light text-cream mb-6">Join Our Community</h2>
+                    <h2 class="font-display text-4xl md:text-5xl font-light mb-6" style="color: var(--color-cream);">
+                        Join Our Community</h2>
                     <p class="text-stone-400 text-lg max-w-2xl mx-auto mb-12">
-                        Whether you're a student looking for experience or a company seeking talent, ExperienceLink is here to help you succeed.
+                        Whether you're a student looking for experience or a company seeking talent, ExperienceLink is
+                        here to help you succeed.
                     </p>
 
                     <!-- Stats -->
                     <div class="flex flex-wrap justify-center gap-8 md:gap-16 mb-12">
                         <div class="stat">
-                            <div class="stat-value text-amber text-5xl md:text-6xl" data-counter="10000" data-suffix="+">10,000+</div>
+                            <div class="stat-value text-amber text-5xl md:text-6xl" data-counter="10000"
+                                data-suffix="+">10,000+</div>
                             <div class="stat-label text-stone-400 mt-2">Active Students</div>
                         </div>
                         <div class="hidden md:block w-px bg-charcoal h-20"></div>
                         <div class="stat">
-                            <div class="stat-value text-amber text-5xl md:text-6xl" data-counter="500" data-suffix="+">500+</div>
+                            <div class="stat-value text-amber text-5xl md:text-6xl" data-counter="500" data-suffix="+">
+                                500+</div>
                             <div class="stat-label text-stone-400 mt-2">Projects Posted</div>
                         </div>
                         <div class="hidden md:block w-px bg-charcoal h-20"></div>
                         <div class="stat">
-                            <div class="stat-value text-amber text-5xl md:text-6xl" data-counter="200" data-suffix="+">200+</div>
+                            <div class="stat-value text-amber text-5xl md:text-6xl" data-counter="200" data-suffix="+">
+                                200+</div>
                             <div class="stat-label text-stone-400 mt-2">Partner Companies</div>
                         </div>
                     </div>
@@ -239,21 +236,28 @@
                         <h2 class="section-title">Why We Started</h2>
                     </div>
 
-                    <div class="prose prose-lg dark:prose-invert mx-auto">
-                        <p class="text-stone-600 dark:text-stone-400 text-lg md:text-xl leading-relaxed mb-8">
-                            ExperienceLink was founded with a simple idea: <span class="text-stone-900 dark:text-cream font-medium">every student deserves the opportunity to gain real-world experience before graduation.</span>
+                    <div class="prose prose-lg mx-auto">
+                        <p class="text-stone-600 text-lg md:text-xl leading-relaxed mb-8">
+                            ExperienceLink was founded with a simple idea: <span
+                                class="text-stone-900 font-medium">every student deserves the
+                                opportunity to gain real-world experience before graduation.</span>
                         </p>
 
-                        <blockquote class="pull-quote text-stone-900 dark:text-cream my-12">
-                            "We noticed that many talented students struggle to land their first internship because most positions require prior experience."
+                        <blockquote class="pull-quote text-stone-900 my-12">
+                            "We noticed that many talented students struggle to land their first internship because most
+                            positions require prior experience."
                         </blockquote>
 
-                        <p class="text-stone-600 dark:text-stone-400 text-lg leading-relaxed mb-8">
-                            At the same time, companies have countless small projects that could benefit from fresh perspectives and eager talent. We saw an opportunity to create something that would benefit everyone.
+                        <p class="text-stone-600 text-lg leading-relaxed mb-8">
+                            At the same time, companies have countless small projects that could benefit from fresh
+                            perspectives and eager talent. We saw an opportunity to create something that would benefit
+                            everyone.
                         </p>
 
-                        <p class="text-stone-600 dark:text-stone-400 text-lg leading-relaxed">
-                            ExperienceLink bridges this gap by creating a platform where students can work on real projects, build portfolios, and connect with companies - all while still in school. We're not just a job board; we're a launchpad for the next generation of professionals.
+                        <p class="text-stone-600 text-lg leading-relaxed">
+                            ExperienceLink bridges this gap by creating a platform where students can work on real
+                            projects, build portfolios, and connect with companies - all while still in school. We're
+                            not just a job board; we're a launchpad for the next generation of professionals.
                         </p>
                     </div>
                 </div>
@@ -268,8 +272,9 @@
                 <div class="footer-brand">
                     <div class="footer-logo flex items-center gap-3">
                         <div class="w-8 h-8 bg-amber rounded-lg flex items-center justify-center">
-                            <svg class="w-5 h-5 text-ink" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/>
+                            <svg class="w-5 h-5 text-ink" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" />
                             </svg>
                         </div>
                         <span>ExperienceLink</span>
@@ -319,4 +324,5 @@
     <script src="js/nav-auth.js"></script>
     <script src="js/animations.js"></script>
 </body>
+
 </html>

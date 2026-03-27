@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-    
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,7 +9,9 @@
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
 
     <!-- Styles -->
     <link rel="stylesheet" href="css/tokens.css">
@@ -21,28 +23,8 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
-            darkMode: 'class',
             theme: {
                 extend: {
-                    colors: {
-                        ink: '#0f0f23',
-                        charcoal: '#1a1a2e',
-                        amber: '#1743f0',
-                        coral: '#3b82f6',
-                        sage: '#06b6d4',
-                        cream: '#faf8f5',
-                        stone: {
-                            100: '#f5f4f2',
-                            200: '#e8e6e1',
-                            300: '#d4d1ca',
-                            400: '#a8a49d',
-                            500: '#8a8680',
-                            600: '#6b6860',
-                            700: '#4a4840',
-                            800: '#37352f',
-                            900: '#2c2a27',
-                        }
-                    },
                     fontFamily: {
                         'display': ['Cormorant Garamond', 'Georgia', 'serif'],
                         'body': ['Plus Jakarta Sans', 'system-ui', 'sans-serif'],
@@ -53,7 +35,8 @@
         }
     </script>
 </head>
-<body class="font-body bg-cream dark:bg-ink transition-colors duration-300 grain">
+
+<body class="font-body bg-cream transition-colors duration-300 grain">
     <!-- Navigation -->
     <nav class="nav">
         <div class="nav-container">
@@ -61,7 +44,7 @@
             <a href="index.html" class="nav-logo">
                 <div class="nav-logo-mark">
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/>
+                        <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" />
                     </svg>
                 </div>
                 <span>ExperienceLink</span>
@@ -77,22 +60,15 @@
 
             <!-- Right Side -->
             <div class="nav-actions">
-                <!-- Dark Mode Toggle -->
-                <button data-theme-toggle class="theme-toggle" aria-label="Toggle dark mode">
-                    <svg class="icon-sun" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"/>
-                    </svg>
-                    <svg class="icon-moon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"/>
-                    </svg>
-                </button>
                 <a href="login.html" class="nav-link hidden md:block">Login</a>
                 <a href="signup.html" class="btn btn-primary hidden md:flex">Get Started</a>
 
                 <!-- Mobile Menu Button -->
-                <button data-mobile-menu-btn class="nav-mobile-btn md:hidden" aria-label="Open menu" aria-expanded="false">
+                <button data-mobile-menu-btn class="nav-mobile-btn md:hidden" aria-label="Open menu"
+                    aria-expanded="false">
                     <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M4 6h16M4 12h16M4 18h16" />
                     </svg>
                 </button>
             </div>
@@ -126,7 +102,7 @@
                 <div class="lg:col-span-7" data-animate="fadeUp">
                     <p class="label text-amber mb-6">Bridging Education & Industry</p>
 
-                    <h1 class="display-xl text-stone-900 dark:text-cream mb-8">
+                    <h1 class="display-xl text-stone-900 mb-8">
                         <span class="hero-word"><span>Transform</span></span>
                         <span class="hero-word"><span>Your</span></span><br>
                         <span class="hero-word"><span>Learning</span></span>
@@ -134,15 +110,17 @@
                         <span class="text-amber hero-word"><span>Experience</span></span>
                     </h1>
 
-                    <p class="lead text-stone-600 dark:text-stone-400 max-w-xl mb-10">
-                        Connect with real companies on meaningful projects. Build your portfolio, gain industry skills, and launch your career while still in school.
+                    <p class="lead text-stone-600 max-w-xl mb-10">
+                        Connect with real companies on meaningful projects. Build your portfolio, gain industry skills,
+                        and launch your career while still in school.
                     </p>
 
                     <div class="flex flex-wrap gap-4 mb-16">
                         <a href="projects.html" class="btn btn-primary btn-lg arrow-right">
                             Browse Projects
                             <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M17 8l4 4m0 0l-4 4m4-4H3" />
                             </svg>
                         </a>
                         <a href="companies.html" class="btn btn-secondary btn-lg">
@@ -154,7 +132,8 @@
                 <!-- Right Image (5 cols) -->
                 <div class="lg:col-span-5 relative" data-animate="fadeUp" style="--delay: 200ms;">
                     <div class="rounded-2xl overflow-hidden shadow-2xl">
-                        <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=800&h=600&fit=crop" alt="Team collaboration" class="w-full h-auto">
+                        <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=800&h=600&fit=crop"
+                            alt="Team collaboration" class="w-full h-auto">
                     </div>
 
                     <!-- Overlapping Stats Card -->
@@ -174,12 +153,12 @@
         </div>
 
         <!-- Geometric Decorative Elements -->
-        <div class="geo-shape geo-circle hidden lg:block" style="width: 200px; height: 200px; top: 20%; right: 5%;"></div>
-        <div class="geo-shape geo-line hidden lg:block" style="width: 100px; bottom: 30%; left: 10%;"></div>
+        <div class="geo-shape geo-circle hidden lg:block" style="width: 200px; height: 200px; top: 20%; right: 5%;">
+        </div>
     </section>
 
     <!-- Why ExperienceLink Section -->
-    <section class="section bg-white dark:bg-charcoal">
+    <section class="section bg-white">
         <div class="container">
             <div class="section-header text-center max-w-2xl mx-auto" data-animate="fadeUp">
                 <p class="section-label">Why Choose Us</p>
@@ -192,15 +171,19 @@
             <!-- Bento Grid -->
             <div class="grid lg:grid-cols-12 gap-6">
                 <!-- Large Feature Card -->
-                <div class="lg:col-span-7 bento-card bento-card-lg card-hover hover-lift" data-animate="fadeUp" style="--delay: 100ms;">
+                <div class="lg:col-span-7 bento-card bento-card-lg card-hover hover-lift" data-animate="fadeUp"
+                    style="--delay: 100ms;">
                     <div class="icon-box icon-box-lg mb-6">
                         <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                         </svg>
                     </div>
-                    <h3 class="text-2xl font-display font-semibold text-stone-900 dark:text-cream mb-4">Real-World Experience</h3>
-                    <p class="text-stone-600 dark:text-stone-400 text-lg leading-relaxed">
-                        Work on actual projects from real companies. Build a portfolio that stands out to future employers with tangible results and proven skills.
+                    <h3 class="text-2xl font-display font-semibold text-stone-900 mb-4">Real-World
+                        Experience</h3>
+                    <p class="text-stone-600 text-lg leading-relaxed">
+                        Work on actual projects from real companies. Build a portfolio that stands out to future
+                        employers with tangible results and proven skills.
                     </p>
                     <div class="mt-8 flex flex-wrap gap-3">
                         <span class="tag">Portfolio Building</span>
@@ -214,21 +197,26 @@
                     <div class="bento-card card-dark hover-lift" data-animate="fadeUp" style="--delay: 200ms;">
                         <div class="icon-box mb-4" style="background: rgba(23, 67, 240, 0.2);">
                             <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"/>
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" />
                             </svg>
                         </div>
                         <h3 class="text-xl font-display font-medium text-cream mb-2">Industry Connections</h3>
-                        <p class="text-stone-400">Connect directly with companies and professionals in your field of interest.</p>
+                        <p class="text-stone-400">Connect directly with companies and professionals in your field of
+                            interest.</p>
                     </div>
 
                     <div class="bento-card hover-lift" data-animate="fadeUp" style="--delay: 300ms;">
                         <div class="icon-box mb-4">
                             <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"/>
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" />
                             </svg>
                         </div>
-                        <h3 class="text-xl font-display font-medium text-stone-900 dark:text-cream mb-2">Skill Development</h3>
-                        <p class="text-stone-600 dark:text-stone-400">Develop in-demand skills and get feedback from industry professionals.</p>
+                        <h3 class="text-xl font-display font-medium text-stone-900 mb-2">Skill
+                            Development</h3>
+                        <p class="text-stone-600">Develop in-demand skills and get feedback from
+                            industry professionals.</p>
                     </div>
                 </div>
             </div>
@@ -248,22 +236,28 @@
                 <!-- Step 1 -->
                 <div class="text-center step-connector" data-animate="fadeUp" style="--delay: 100ms;">
                     <div class="step-number mx-auto mb-6">1</div>
-                    <h3 class="text-xl font-display font-semibold text-stone-900 dark:text-cream mb-3">Create Your Profile</h3>
-                    <p class="text-stone-600 dark:text-stone-400">Sign up and showcase your skills, education, and interests.</p>
+                    <h3 class="text-xl font-display font-semibold text-stone-900 mb-3">Create Your
+                        Profile</h3>
+                    <p class="text-stone-600">Sign up and showcase your skills, education, and
+                        interests.</p>
                 </div>
 
                 <!-- Step 2 -->
                 <div class="text-center step-connector" data-animate="fadeUp" style="--delay: 200ms;">
                     <div class="step-number mx-auto mb-6">2</div>
-                    <h3 class="text-xl font-display font-semibold text-stone-900 dark:text-cream mb-3">Browse Projects</h3>
-                    <p class="text-stone-600 dark:text-stone-400">Find projects that match your skills and career goals.</p>
+                    <h3 class="text-xl font-display font-semibold text-stone-900 mb-3">Browse Projects
+                    </h3>
+                    <p class="text-stone-600">Find projects that match your skills and career goals.
+                    </p>
                 </div>
 
                 <!-- Step 3 -->
                 <div class="text-center step-connector" data-animate="fadeUp" style="--delay: 300ms;">
                     <div class="step-number mx-auto mb-6">3</div>
-                    <h3 class="text-xl font-display font-semibold text-stone-900 dark:text-cream mb-3">Apply & Deliver</h3>
-                    <p class="text-stone-600 dark:text-stone-400">Apply to projects, complete the work, and build your portfolio.</p>
+                    <h3 class="text-xl font-display font-semibold text-stone-900 mb-3">Apply & Deliver
+                    </h3>
+                    <p class="text-stone-600">Apply to projects, complete the work, and build your
+                        portfolio.</p>
                 </div>
             </div>
         </div>
@@ -277,13 +271,15 @@
                     Ready to Get Started?
                 </h2>
                 <p class="text-xl text-stone-800 mb-10 max-w-2xl mx-auto">
-                    Join thousands of students and companies already using ExperienceLink to bridge the gap between education and industry.
+                    Join thousands of students and companies already using ExperienceLink to bridge the gap between
+                    education and industry.
                 </p>
                 <div class="flex flex-wrap justify-center gap-4">
                     <a href="signup.html" class="btn btn-lg bg-ink text-cream hover:bg-stone-800">
                         Sign Up Now
                     </a>
-                    <a href="about.html" class="btn btn-lg bg-transparent border-2 border-ink text-ink hover:bg-ink hover:text-cream">
+                    <a href="about.html"
+                        class="btn btn-lg bg-transparent border-2 border-ink text-ink hover:bg-ink hover:text-cream">
                         Learn More
                     </a>
                 </div>
@@ -298,8 +294,9 @@
                 <div class="footer-brand">
                     <div class="footer-logo flex items-center gap-3">
                         <div class="w-8 h-8 bg-amber rounded-lg flex items-center justify-center">
-                            <svg class="w-5 h-5 text-ink" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/>
+                            <svg class="w-5 h-5 text-ink" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" />
                             </svg>
                         </div>
                         <span>ExperienceLink</span>
@@ -349,4 +346,5 @@
     <script src="js/nav-auth.js"></script>
     <script src="js/animations.js"></script>
 </body>
+
 </html>

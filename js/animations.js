@@ -61,49 +61,6 @@ class ScrollAnimator {
 }
 
 // ============================================
-// DARK MODE TOGGLE
-// ============================================
-
-class ThemeManager {
-  constructor() {
-    this.html = document.documentElement;
-    this.toggleButtons = document.querySelectorAll('[data-theme-toggle]');
-    this.init();
-  }
-
-  init() {
-    // Check for saved preference or system preference
-    const savedTheme = localStorage.getItem('theme');
-    const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-
-    if (savedTheme === 'dark' || (!savedTheme && systemPrefersDark)) {
-      this.html.classList.add('dark');
-    }
-
-    // Add click listeners to toggle buttons
-    this.toggleButtons.forEach((btn) => {
-      btn.addEventListener('click', () => this.toggle());
-    });
-
-    // Listen for system preference changes
-    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
-      if (!localStorage.getItem('theme')) {
-        this.html.classList.toggle('dark', e.matches);
-      }
-    });
-  }
-
-  toggle() {
-    this.html.classList.toggle('dark');
-    localStorage.setItem('theme', this.html.classList.contains('dark') ? 'dark' : 'light');
-  }
-
-  isDark() {
-    return this.html.classList.contains('dark');
-  }
-}
-
-// ============================================
 // MOBILE MENU
 // ============================================
 
@@ -337,7 +294,6 @@ document.addEventListener('DOMContentLoaded', () => {
   window.ExperienceLink = {
     ...window.ExperienceLink, // Preserve existing properties (Auth, Profiles, etc.)
     scrollAnimator: new ScrollAnimator(),
-    themeManager: new ThemeManager(),
     mobileMenu: new MobileMenu(),
     counterAnimator: new CounterAnimator(),
     smoothScroll: new SmoothScroll(),
@@ -356,7 +312,6 @@ document.addEventListener('DOMContentLoaded', () => {
 if (typeof module !== 'undefined' && module.exports) {
   module.exports = {
     ScrollAnimator,
-    ThemeManager,
     MobileMenu,
     CounterAnimator,
     SmoothScroll,

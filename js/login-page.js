@@ -205,7 +205,7 @@
         if (!errorDiv) {
             errorDiv = document.createElement('div');
             errorDiv.id = 'authError';
-            errorDiv.className = 'mb-6 p-4 bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-800 rounded-lg text-red-600 dark:text-red-400 text-sm';
+            errorDiv.className = 'mb-6 p-4 bg-red-50 border border-red-200 rounded-lg text-red-600 text-sm';
 
             const form = document.getElementById('loginForm');
             if (form) {
@@ -232,7 +232,7 @@
         if (!successDiv) {
             successDiv = document.createElement('div');
             successDiv.id = 'authSuccess';
-            successDiv.className = 'mb-6 p-4 bg-green-50 dark:bg-green-900/20 border border-green-200 dark:border-green-800 rounded-lg text-green-600 dark:text-green-400 text-sm';
+            successDiv.className = 'mb-6 p-4 bg-green-50 border border-green-200 rounded-lg text-green-600 text-sm';
 
             const form = document.getElementById('loginForm');
             if (form) {

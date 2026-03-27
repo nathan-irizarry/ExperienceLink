@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,7 +9,9 @@
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
 
     <!-- Styles -->
     <link rel="stylesheet" href="css/tokens.css">
@@ -20,28 +23,8 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
-            darkMode: 'class',
             theme: {
                 extend: {
-                    colors: {
-                        ink: '#0f0f23',
-                        charcoal: '#1a1a2e',
-                        amber: '#1743f0',
-                        coral: '#3b82f6',
-                        sage: '#06b6d4',
-                        cream: '#faf8f5',
-                        stone: {
-                            100: '#f5f4f2',
-                            200: '#e8e6e1',
-                            300: '#d4d1ca',
-                            400: '#a8a49d',
-                            500: '#8a8680',
-                            600: '#6b6860',
-                            700: '#4a4840',
-                            800: '#37352f',
-                            900: '#2c2a27',
-                        }
-                    },
                     fontFamily: {
                         'display': ['Cormorant Garamond', 'Georgia', 'serif'],
                         'body': ['Plus Jakarta Sans', 'system-ui', 'sans-serif'],
@@ -52,7 +35,8 @@
         }
     </script>
 </head>
-<body class="font-body bg-cream dark:bg-ink transition-colors duration-300 grain">
+
+<body class="font-body bg-cream transition-colors duration-300 grain">
     <!-- Navigation -->
     <nav class="nav">
         <div class="nav-container">
@@ -60,7 +44,7 @@
             <a href="index.html" class="nav-logo">
                 <div class="nav-logo-mark">
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/>
+                        <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" />
                     </svg>
                 </div>
                 <span>ExperienceLink</span>
@@ -76,21 +60,14 @@
 
             <!-- Right Side -->
             <div class="nav-actions">
-                <button data-theme-toggle class="theme-toggle" aria-label="Toggle dark mode">
-                    <svg class="icon-sun" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"/>
-                    </svg>
-                    <svg class="icon-moon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"/>
-                    </svg>
-                </button>
                 <a href="login.html" class="nav-link hidden md:block">Login</a>
                 <a href="signup.html" class="btn btn-primary hidden md:flex">Get Started</a>
 
                 <!-- Mobile Menu Button -->
                 <button data-mobile-menu-btn class="nav-mobile-btn md:hidden" aria-label="Open menu">
                     <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M4 6h16M4 12h16M4 18h16" />
                     </svg>
                 </button>
             </div>
@@ -133,31 +110,38 @@
                 <div class="flex items-center gap-3 mb-8">
                     <div class="icon-box">
                         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"/>
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
                         </svg>
                     </div>
-                    <h2 class="text-2xl font-display font-semibold text-stone-900 dark:text-cream">Post a New Project</h2>
+                    <h2 class="text-2xl font-display font-semibold text-stone-900">Post a New Project
+                    </h2>
                 </div>
 
                 <form class="space-y-6">
                     <!-- Project Title -->
                     <div class="form-group">
                         <label for="projectTitle" class="form-label">Project Title</label>
-                        <input type="text" id="projectTitle" placeholder="e.g., Build a Landing Page Component" class="form-input">
+                        <input type="text" id="projectTitle" placeholder="e.g., Build a Landing Page Component"
+                            class="form-input">
                     </div>
 
                     <!-- Description -->
                     <div class="form-group">
                         <label for="description" class="form-label">Description</label>
-                        <textarea id="description" rows="5" placeholder="Describe the project, requirements, and expectations..." class="form-input form-textarea" data-char-count="charCount"></textarea>
-                        <p class="text-xs text-stone-500 mt-2"><span id="charCount" class="font-mono">0</span> characters</p>
+                        <textarea id="description" rows="5"
+                            placeholder="Describe the project, requirements, and expectations..."
+                            class="form-input form-textarea" data-char-count="charCount"></textarea>
+                        <p class="text-xs text-stone-500 mt-2"><span id="charCount" class="font-mono">0</span>
+                            characters</p>
                     </div>
 
                     <!-- Skills and Duration Row -->
                     <div class="grid md:grid-cols-2 gap-6">
                         <div class="form-group">
                             <label for="skills" class="form-label">Required Skills</label>
-                            <input type="text" id="skills" placeholder="e.g., React, TypeScript, CSS" class="form-input">
+                            <input type="text" id="skills" placeholder="e.g., React, TypeScript, CSS"
+                                class="form-input">
                         </div>
 
                         <div class="form-group">
@@ -175,7 +159,8 @@
                     <!-- Submit Button -->
                     <button type="submit" class="btn btn-primary">
                         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"/>
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
                         </svg>
                         Post Project
                     </button>
@@ -188,39 +173,48 @@
                     <!-- Project Card 1 -->
                     <div class="bento-card card-hover hover-lift" data-animate="fadeUp" style="--delay: 100ms;">
                         <div class="flex justify-between items-start mb-4">
-                            <h3 class="font-display font-semibold text-stone-900 dark:text-cream">Landing Page Component</h3>
-                            <span class="px-2 py-1 bg-sage/20 text-sage text-xs font-mono rounded-full">Active</span>
+                            <h3 class="font-display font-semibold text-stone-900">Landing Page Component
+                            </h3>
+                            <span class="px-2 py-1 bg-coral/20 text-coral text-xs font-mono rounded-full">Active</span>
                         </div>
-                        <p class="text-stone-600 dark:text-stone-400 text-sm mb-4">Build a responsive landing page for our product launch...</p>
+                        <p class="text-stone-600 text-sm mb-4">Build a responsive landing page for
+                            our product launch...</p>
                         <div class="flex items-center justify-between text-sm">
                             <span class="font-mono text-stone-500">5 applicants</span>
-                            <button class="text-amber hover:text-amber/80 font-medium link-underline">View Details</button>
+                            <button class="text-amber hover:text-amber/80 font-medium link-underline">View
+                                Details</button>
                         </div>
                     </div>
 
                     <!-- Project Card 2 -->
                     <div class="bento-card card-hover hover-lift" data-animate="fadeUp" style="--delay: 200ms;">
                         <div class="flex justify-between items-start mb-4">
-                            <h3 class="font-display font-semibold text-stone-900 dark:text-cream">Data Dashboard Design</h3>
-                            <span class="px-2 py-1 bg-coral/20 text-coral text-xs font-mono rounded-full">In Progress</span>
+                            <h3 class="font-display font-semibold text-stone-900">Data Dashboard Design
+                            </h3>
+                            <span class="px-2 py-1 bg-coral/20 text-coral text-xs font-mono rounded-full">In
+                                Progress</span>
                         </div>
-                        <p class="text-stone-600 dark:text-stone-400 text-sm mb-4">Design a data visualization dashboard for analytics...</p>
+                        <p class="text-stone-600 text-sm mb-4">Design a data visualization dashboard
+                            for analytics...</p>
                         <div class="flex items-center justify-between text-sm">
                             <span class="font-mono text-stone-500">3 applicants</span>
-                            <button class="text-amber hover:text-amber/80 font-medium link-underline">View Details</button>
+                            <button class="text-amber hover:text-amber/80 font-medium link-underline">View
+                                Details</button>
                         </div>
                     </div>
 
                     <!-- Project Card 3 -->
                     <div class="bento-card card-hover hover-lift" data-animate="fadeUp" style="--delay: 300ms;">
                         <div class="flex justify-between items-start mb-4">
-                            <h3 class="font-display font-semibold text-stone-900 dark:text-cream">API Integration</h3>
-                            <span class="px-2 py-1 bg-sage/20 text-sage text-xs font-mono rounded-full">Active</span>
+                            <h3 class="font-display font-semibold text-stone-900">API Integration</h3>
+                            <span class="px-2 py-1 bg-coral/20 text-coral text-xs font-mono rounded-full">Active</span>
                         </div>
-                        <p class="text-stone-600 dark:text-stone-400 text-sm mb-4">Integrate third-party APIs into our platform...</p>
+                        <p class="text-stone-600 text-sm mb-4">Integrate third-party APIs into our
+                            platform...</p>
                         <div class="flex items-center justify-between text-sm">
                             <span class="font-mono text-stone-500">8 applicants</span>
-                            <button class="text-amber hover:text-amber/80 font-medium link-underline">View Details</button>
+                            <button class="text-amber hover:text-amber/80 font-medium link-underline">View
+                                Details</button>
                         </div>
                     </div>
                 </div>
@@ -245,12 +239,12 @@
                                     <div class="flex items-center gap-3">
                                         <div class="avatar avatar-sm bg-amber/20 text-amber">JD</div>
                                         <div>
-                                            <div class="font-medium text-stone-900 dark:text-cream">Jane Doe</div>
+                                            <div class="font-medium text-stone-900">Jane Doe</div>
                                             <div class="text-xs text-stone-500">Stanford University</div>
                                         </div>
                                     </div>
                                 </td>
-                                <td class="text-stone-900 dark:text-cream">Landing Page Component</td>
+                                <td class="text-stone-900">Landing Page Component</td>
                                 <td>
                                     <div class="flex gap-1">
                                         <span class="tag text-xs">React</span>
@@ -258,12 +252,14 @@
                                     </div>
                                 </td>
                                 <td>
-                                    <span class="px-2 py-1 bg-stone-200 dark:bg-charcoal text-stone-700 dark:text-stone-300 text-xs font-mono rounded-full">Pending</span>
+                                    <span
+                                        class="px-2 py-1 bg-stone-200 text-stone-700 text-xs font-mono rounded-full">Pending</span>
                                 </td>
                                 <td>
                                     <div class="flex gap-3">
                                         <button class="text-amber hover:text-amber/80 text-sm font-medium">View</button>
-                                        <button class="text-sage hover:text-sage/80 text-sm font-medium">Accept</button>
+                                        <button
+                                            class="text-coral hover:text-coral/80 text-sm font-medium">Accept</button>
                                     </div>
                                 </td>
                             </tr>
@@ -272,12 +268,12 @@
                                     <div class="flex items-center gap-3">
                                         <div class="avatar avatar-sm bg-coral/20 text-coral">MS</div>
                                         <div>
-                                            <div class="font-medium text-stone-900 dark:text-cream">Mike Smith</div>
+                                            <div class="font-medium text-stone-900">Mike Smith</div>
                                             <div class="text-xs text-stone-500">MIT</div>
                                         </div>
                                     </div>
                                 </td>
-                                <td class="text-stone-900 dark:text-cream">Data Dashboard Design</td>
+                                <td class="text-stone-900">Data Dashboard Design</td>
                                 <td>
                                     <div class="flex gap-1">
                                         <span class="tag text-xs">Figma</span>
@@ -285,26 +281,28 @@
                                     </div>
                                 </td>
                                 <td>
-                                    <span class="px-2 py-1 bg-sage/20 text-sage text-xs font-mono rounded-full">Accepted</span>
+                                    <span
+                                        class="px-2 py-1 bg-coral/20 text-coral text-xs font-mono rounded-full">Accepted</span>
                                 </td>
                                 <td>
                                     <div class="flex gap-3">
                                         <button class="text-amber hover:text-amber/80 text-sm font-medium">View</button>
-                                        <button class="text-stone-400 text-sm font-medium cursor-not-allowed" disabled>Accept</button>
+                                        <button class="text-stone-400 text-sm font-medium cursor-not-allowed"
+                                            disabled>Accept</button>
                                     </div>
                                 </td>
                             </tr>
                             <tr>
                                 <td>
                                     <div class="flex items-center gap-3">
-                                        <div class="avatar avatar-sm bg-sage/20 text-sage">AL</div>
+                                        <div class="avatar avatar-sm bg-coral/20 text-coral">AL</div>
                                         <div>
-                                            <div class="font-medium text-stone-900 dark:text-cream">Alex Lee</div>
+                                            <div class="font-medium text-stone-900">Alex Lee</div>
                                             <div class="text-xs text-stone-500">UC Berkeley</div>
                                         </div>
                                     </div>
                                 </td>
-                                <td class="text-stone-900 dark:text-cream">API Integration</td>
+                                <td class="text-stone-900">API Integration</td>
                                 <td>
                                     <div class="flex gap-1">
                                         <span class="tag text-xs">Python</span>
@@ -312,12 +310,14 @@
                                     </div>
                                 </td>
                                 <td>
-                                    <span class="px-2 py-1 bg-stone-200 dark:bg-charcoal text-stone-700 dark:text-stone-300 text-xs font-mono rounded-full">Pending</span>
+                                    <span
+                                        class="px-2 py-1 bg-stone-200 text-stone-700 text-xs font-mono rounded-full">Pending</span>
                                 </td>
                                 <td>
                                     <div class="flex gap-3">
                                         <button class="text-amber hover:text-amber/80 text-sm font-medium">View</button>
-                                        <button class="text-sage hover:text-sage/80 text-sm font-medium">Accept</button>
+                                        <button
+                                            class="text-coral hover:text-coral/80 text-sm font-medium">Accept</button>
                                     </div>
                                 </td>
                             </tr>
@@ -345,13 +345,13 @@
     <script src="js/nav-auth.js"></script>
     <script src="js/animations.js"></script>
     <script>
-        // Protect this page - require company role
-        (async function() {
-            const AuthGuard = window.ExperienceLink?.AuthGuard;
-            if (AuthGuard) {
-                await AuthGuard.requireRole('company', 'projects.html');
-            }
-        })();
+            // Protect this page - require company role
+            (async function () {
+                const AuthGuard = window.ExperienceLink?.AuthGuard;
+                if (AuthGuard) {
+                    await AuthGuard.requireRole('company', 'projects.html');
+                }
+            })();
 
         // Tab switching for companies page
         document.addEventListener('DOMContentLoaded', () => {
@@ -379,4 +379,5 @@
         });
     </script>
 </body>
+
 </html>

@@ -59,15 +59,6 @@
   color: var(--color-amber);
 }
 
-.dark .btn-secondary {
-  border-color: var(--color-stone-600);
-  color: var(--color-cream);
-}
-
-.dark .btn-secondary:hover {
-  border-color: var(--color-amber);
-  color: var(--color-amber);
-}
 
 /* Ghost Button */
 .btn-ghost {
@@ -80,9 +71,6 @@
   background: var(--color-stone-100);
 }
 
-.dark .btn-ghost:hover {
-  background: var(--color-charcoal);
-}
 
 /* Button Sizes */
 .btn-sm {
@@ -112,10 +100,6 @@
   transition: all var(--duration-normal) var(--ease-out);
 }
 
-.dark .nav {
-  background: rgba(15, 15, 35, 0.9);
-  border-bottom-color: var(--color-charcoal-light);
-}
 
 .nav-container {
   display: flex;
@@ -227,9 +211,6 @@
   background: var(--color-stone-100);
 }
 
-.dark .nav-mobile-btn:hover {
-  background: var(--color-charcoal);
-}
 
 @media (min-width: 768px) {
   .nav-mobile-btn {
@@ -286,10 +267,6 @@
   box-shadow: var(--shadow-xl);
 }
 
-.dark .card {
-  background: var(--color-charcoal);
-  border-color: var(--color-charcoal-light);
-}
 
 /* Card Variants */
 .card-dark {
@@ -313,10 +290,6 @@
 
 .bento-card-lg {
   padding: var(--space-10);
-}
-
-.dark .bento-card {
-  background: var(--color-charcoal);
 }
 
 /* ============================================
@@ -360,15 +333,6 @@
   box-shadow: 0 0 0 3px rgba(23, 67, 240, 0.15);
 }
 
-.dark .form-input {
-  background: var(--color-ink);
-  border-color: var(--color-charcoal-light);
-  color: var(--color-cream);
-}
-
-.dark .form-input:focus {
-  border-color: var(--color-amber);
-}
 
 /* Textarea */
 .form-textarea {
@@ -406,15 +370,6 @@
   color: var(--color-ink);
 }
 
-.dark .tag {
-  background: var(--color-charcoal-light);
-  color: var(--color-stone-300);
-}
-
-.dark .tag:hover {
-  background: var(--color-amber);
-  color: var(--color-ink);
-}
 
 /* Filter Pills */
 .filter-pill {
@@ -438,10 +393,6 @@
   color: var(--color-ink);
 }
 
-.dark .filter-pill {
-  border-color: var(--color-charcoal-light);
-  color: var(--color-stone-400);
-}
 
 /* ============================================
    STATS
@@ -480,9 +431,6 @@
   z-index: 10;
 }
 
-.dark .stats-overlay {
-  background: var(--color-charcoal);
-}
 
 /* ============================================
    AVATARS
@@ -541,7 +489,7 @@
   width: 64px;
   height: 64px;
   border-radius: var(--radius-full);
-  background: var(--color-amber);
+  background: var(--color-amber-light);
   color: var(--color-ink);
   font-family: var(--font-display);
   font-size: var(--text-2xl);
@@ -595,15 +543,6 @@
   background: var(--color-stone-100);
 }
 
-.dark .social-btn {
-  border-color: var(--color-charcoal-light);
-  color: var(--color-cream);
-}
-
-.dark .social-btn:hover {
-  border-color: var(--color-stone-500);
-  background: var(--color-charcoal);
-}
 
 /* ============================================
    PULL QUOTES
@@ -795,26 +734,10 @@
   color: var(--color-text-primary);
 }
 
-.dark .theme-toggle:hover {
-  background: var(--color-charcoal);
-}
-
 .theme-toggle .icon-sun,
 .theme-toggle .icon-moon {
   width: 20px;
   height: 20px;
-}
-
-.dark .theme-toggle .icon-sun {
-  display: none;
-}
-
-.theme-toggle .icon-moon {
-  display: none;
-}
-
-.dark .theme-toggle .icon-moon {
-  display: block;
 }
 
 /* ============================================
@@ -886,9 +809,6 @@
   background: var(--color-stone-100);
 }
 
-.dark .table th {
-  background: var(--color-charcoal);
-}
 
 .table td {
   padding: var(--space-4) var(--space-6);
@@ -900,9 +820,6 @@
   background: var(--color-stone-100);
 }
 
-.dark .table tr:hover td {
-  background: var(--color-charcoal);
-}
 
 /* ============================================
    TABS
@@ -915,9 +832,6 @@
   border-radius: var(--radius-lg);
 }
 
-.dark .tabs {
-  background: var(--color-charcoal);
-}
 
 .tab {
   padding: var(--space-2) var(--space-4);
@@ -941,9 +855,6 @@
   box-shadow: var(--shadow-sm);
 }
 
-.dark .tab.active {
-  background: var(--color-ink);
-}
 
 /* ============================================
    PROJECT MODAL
@@ -980,15 +891,13 @@
   animation: slideUp var(--duration-normal) var(--ease-out);
 }
 
-.dark .modal-content {
-  background: var(--color-charcoal);
-}
 
 @keyframes slideUp {
   from {
     opacity: 0;
     transform: translateY(20px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -1018,9 +927,6 @@
   color: var(--color-text-primary);
 }
 
-.dark .modal-close:hover {
-  background: var(--color-ink);
-}
 
 .resume-upload-area {
   border: 2px dashed var(--color-stone-300);
@@ -1031,9 +937,6 @@
   transition: all var(--duration-fast) var(--ease-out);
 }
 
-.dark .resume-upload-area {
-  border-color: var(--color-charcoal-light);
-}
 
 .resume-upload-area:hover {
   border-color: var(--color-amber);

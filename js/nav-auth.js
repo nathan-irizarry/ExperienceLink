@@ -42,6 +42,18 @@
     async function showAuthenticatedNav() {
         const Auth = window.ExperienceLink?.Auth;
         const profile = Auth ? (await Auth.getCurrentProfile()).data : null;
+        const user = Auth ? (await Auth.getCurrentUser()).data : null;
+
+        // Add email and full_name from auth user to profile for display purposes
+        if (profile) {
+            if (user?.email) {
+                profile.email = user.email;
+            }
+            // Use auth user metadata full_name if profile doesn't have one
+            if (!profile.full_name && user?.user_metadata?.full_name) {
+                profile.full_name = user.user_metadata.full_name;
+            }
+        }
 
         // Get nav elements
         const loginLinks = document.querySelectorAll('a[href="login.html"]');
@@ -111,28 +123,30 @@
         // Get first name for display and initials for avatar
         const fullName = profile?.full_name || '';
         const firstName = fullName.split(' ')[0] || 'User';
-        const initials = fullName ? fullName.split(' ').map(n => n[0]).join('').toUpperCase().slice(0, 2) : 'U';
+        const initials = fullName
+            ? fullName.split(' ').map(n => n[0]).join('').toUpperCase().slice(0, 2)
+            : 'U';
 
         container.innerHTML = `
-            <button id="userMenuBtn" class="flex items-center gap-2 px-3 py-2 rounded-lg hover:bg-stone-100 dark:hover:bg-charcoal transition-colors">
+            <button id="userMenuBtn" class="flex items-center gap-2 px-3 py-2 rounded-lg hover:bg-stone-100 transition-colors">
                 <div class="avatar avatar-sm bg-amber/20 text-amber">${initials}</div>
-                <span class="text-stone-700 dark:text-stone-300 text-sm font-medium max-w-[100px] truncate">${firstName}</span>
+                <span class="text-stone-700 text-sm font-medium max-w-[100px] truncate">${firstName}</span>
                 <svg class="w-4 h-4 text-stone-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
                 </svg>
             </button>
-            <div id="userMenuDropdown" class="absolute right-0 top-full mt-2 w-48 py-2 bg-cream dark:bg-charcoal rounded-xl shadow-lg border border-stone-200 dark:border-stone-700 opacity-0 invisible transition-all duration-200 z-50">
-                <div class="px-4 py-2 border-b border-stone-200 dark:border-stone-700">
+            <div id="userMenuDropdown" class="absolute right-0 top-full mt-2 w-48 py-2 bg-cream rounded-xl shadow-lg border border-stone-200 opacity-0 invisible transition-all duration-200 z-50">
+                <div class="px-4 py-2 border-b border-stone-200">
                     <p class="text-xs text-stone-500 uppercase tracking-wider">Signed in as</p>
-                    <p class="text-sm text-stone-900 dark:text-cream font-medium truncate">${profile?.email || ''}</p>
+                    <p class="text-sm text-stone-900 font-medium truncate">${profile?.email || ''}</p>
                 </div>
-                <a href="${profile?.role === 'company' ? 'companies.html' : 'projects.html'}" class="flex items-center gap-3 px-4 py-2 text-sm text-stone-700 dark:text-stone-300 hover:bg-stone-100 dark:hover:bg-stone-800 transition-colors">
+                <a href="${profile?.role === 'company' ? 'companies.html' : 'projects.html'}" class="flex items-center gap-3 px-4 py-2 text-sm text-stone-700 hover:bg-stone-100 transition-colors">
                     <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z"/>
                     </svg>
                     Dashboard
                 </a>
-                <button id="logoutBtn" class="flex items-center gap-3 w-full px-4 py-2 text-sm text-red-600 hover:bg-stone-100 dark:hover:bg-stone-800 transition-colors">
+                <button id="logoutBtn" class="flex items-center gap-3 w-full px-4 py-2 text-sm text-red-600 hover:bg-stone-100 transition-colors">
                     <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1"/>
                     </svg>

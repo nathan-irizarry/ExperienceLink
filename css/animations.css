@@ -13,6 +13,7 @@
     opacity: 0;
     transform: translateY(30px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -24,6 +25,7 @@
   from {
     opacity: 0;
   }
+
   to {
     opacity: 1;
   }
@@ -35,6 +37,7 @@
     opacity: 0;
     transform: translateX(-50px);
   }
+
   to {
     opacity: 1;
     transform: translateX(0);
@@ -47,6 +50,7 @@
     opacity: 0;
     transform: translateX(50px);
   }
+
   to {
     opacity: 1;
     transform: translateX(0);
@@ -59,6 +63,7 @@
     opacity: 0;
     transform: scale(0.9);
   }
+
   to {
     opacity: 1;
     transform: scale(1);
@@ -71,6 +76,7 @@
     opacity: 0;
     transform: translateY(100%);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -79,15 +85,20 @@
 
 /* Gradient Mesh Float */
 @keyframes meshFloat {
-  0%, 100% {
+
+  0%,
+  100% {
     transform: translate(0, 0) scale(1);
   }
+
   25% {
     transform: translate(10px, -20px) scale(1.05);
   }
+
   50% {
     transform: translate(-5px, 10px) scale(0.95);
   }
+
   75% {
     transform: translate(-15px, -10px) scale(1.02);
   }
@@ -95,15 +106,20 @@
 
 /* Blob Morph */
 @keyframes blobMorph {
-  0%, 100% {
+
+  0%,
+  100% {
     border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
   }
+
   25% {
     border-radius: 30% 60% 70% 40% / 50% 60% 30% 60%;
   }
+
   50% {
     border-radius: 50% 60% 30% 60% / 30% 60% 70% 40%;
   }
+
   75% {
     border-radius: 60% 40% 60% 30% / 60% 30% 40% 70%;
   }
@@ -111,9 +127,12 @@
 
 /* Pulse Glow */
 @keyframes pulseGlow {
-  0%, 100% {
+
+  0%,
+  100% {
     box-shadow: 0 0 20px rgba(23, 67, 240, 0.3);
   }
+
   50% {
     box-shadow: 0 0 40px rgba(23, 67, 240, 0.5);
   }
@@ -124,6 +143,7 @@
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }
@@ -134,6 +154,7 @@
   0% {
     background-position: -200% 0;
   }
+
   100% {
     background-position: 200% 0;
   }
@@ -144,6 +165,7 @@
   from {
     stroke-dashoffset: 1000;
   }
+
   to {
     stroke-dashoffset: 0;
   }
@@ -157,7 +179,7 @@
 [data-animate] {
   opacity: 0;
   transition: opacity var(--duration-slow) var(--ease-out),
-              transform var(--duration-slow) var(--ease-out);
+    transform var(--duration-slow) var(--ease-out);
 }
 
 [data-animate="fadeUp"] {
@@ -201,6 +223,7 @@
 .hero-word {
   display: inline-block;
   overflow: hidden;
+  padding-bottom: 0.15em;
 }
 
 .hero-word span {
@@ -211,12 +234,29 @@
   animation-delay: var(--word-delay, 0ms);
 }
 
-.hero-word:nth-child(1) span { --word-delay: 0ms; }
-.hero-word:nth-child(2) span { --word-delay: 100ms; }
-.hero-word:nth-child(3) span { --word-delay: 200ms; }
-.hero-word:nth-child(4) span { --word-delay: 300ms; }
-.hero-word:nth-child(5) span { --word-delay: 400ms; }
-.hero-word:nth-child(6) span { --word-delay: 500ms; }
+.hero-word:nth-child(1) span {
+  --word-delay: 0ms;
+}
+
+.hero-word:nth-child(2) span {
+  --word-delay: 100ms;
+}
+
+.hero-word:nth-child(3) span {
+  --word-delay: 200ms;
+}
+
+.hero-word:nth-child(4) span {
+  --word-delay: 300ms;
+}
+
+.hero-word:nth-child(5) span {
+  --word-delay: 400ms;
+}
+
+.hero-word:nth-child(6) span {
+  --word-delay: 500ms;
+}
 
 /* ============================================
    GRADIENT MESH BACKGROUND
@@ -258,15 +298,12 @@
 .mesh-blob-3 {
   width: 250px;
   height: 250px;
-  background: var(--color-sage);
+  background: var(--color-coral);
   top: 50%;
   left: 30%;
   animation-delay: -10s;
 }
 
-.dark .mesh-blob {
-  opacity: 0.3;
-}
 
 /* ============================================
    HOVER ANIMATIONS
@@ -274,7 +311,7 @@
 
 .hover-lift {
   transition: transform var(--duration-normal) var(--ease-out),
-              box-shadow var(--duration-normal) var(--ease-out);
+    box-shadow var(--duration-normal) var(--ease-out);
 }
 
 .hover-lift:hover {
@@ -350,26 +387,15 @@
    ============================================ */
 
 .skeleton {
-  background: linear-gradient(
-    90deg,
-    var(--color-stone-200) 25%,
-    var(--color-stone-100) 50%,
-    var(--color-stone-200) 75%
-  );
+  background: linear-gradient(90deg,
+      var(--color-stone-200) 25%,
+      var(--color-stone-100) 50%,
+      var(--color-stone-200) 75%);
   background-size: 200% 100%;
   animation: shimmer 1.5s infinite;
   border-radius: var(--radius-md);
 }
 
-.dark .skeleton {
-  background: linear-gradient(
-    90deg,
-    var(--color-charcoal) 25%,
-    var(--color-charcoal-light) 50%,
-    var(--color-charcoal) 75%
-  );
-  background-size: 200% 100%;
-}
 
 /* ============================================
    PAGE TRANSITION
@@ -384,7 +410,7 @@
   opacity: 1;
   transform: translateY(0);
   transition: opacity var(--duration-slow) var(--ease-out),
-              transform var(--duration-slow) var(--ease-out);
+    transform var(--duration-slow) var(--ease-out);
 }
 
 /* ============================================
@@ -392,6 +418,7 @@
    ============================================ */
 
 @media (prefers-reduced-motion: reduce) {
+
   *,
   *::before,
   *::after {
@@ -441,34 +468,6 @@
   opacity: 0.6;
 }
 
-/* ============================================
-   CONNECTING LINES (for steps)
-   ============================================ */
-
-.step-connector {
-  position: relative;
-}
-
-.step-connector::after {
-  content: '';
-  position: absolute;
-  top: 50%;
-  left: 100%;
-  width: calc(100% - 80px);
-  height: 2px;
-  background: linear-gradient(90deg, var(--color-amber), var(--color-stone-300));
-  opacity: 0.5;
-}
-
-.step-connector:last-child::after {
-  display: none;
-}
-
-@media (max-width: 767px) {
-  .step-connector::after {
-    display: none;
-  }
-}
 
 /* ============================================
    CARD HOVER EFFECTS
@@ -508,6 +507,7 @@
     opacity: 0;
     transform: translateY(10px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);

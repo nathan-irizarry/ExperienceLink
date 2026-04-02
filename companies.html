@@ -39,7 +39,7 @@
     </script>
 </head>
 
-<body class="font-body bg-cream transition-colors duration-300 grain">
+<body class="font-body bg-cream transition-colors duration-300 grain" style="visibility: hidden;">
     <!-- Navigation -->
     <nav class="nav">
         <div class="nav-container">
@@ -349,11 +349,17 @@
     <script src="js/nav-auth.js"></script>
     <script src="js/animations.js"></script>
     <script>
-            // Protect this page - require company role
+            // Protect this page - require authentication
             (async function () {
                 const AuthGuard = window.ExperienceLink?.AuthGuard;
                 if (AuthGuard) {
-                    await AuthGuard.requireRole('company', 'projects.html');
+                    const isAuth = await AuthGuard.requireAuth();
+                    if (isAuth) {
+                        document.body.style.visibility = 'visible';
+                    }
+                } else {
+                    // If AuthGuard not available, show page anyway
+                    document.body.style.visibility = 'visible';
                 }
             })();
 

@@ -489,8 +489,8 @@
   width: 64px;
   height: 64px;
   border-radius: var(--radius-full);
-  background: var(--color-amber-light);
-  color: var(--color-ink);
+  background: var(--color-amber);
+  color: white;
   font-family: var(--font-display);
   font-size: var(--text-2xl);
   font-weight: var(--font-semibold);

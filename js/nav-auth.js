@@ -3,7 +3,7 @@
  * Updates navigation UI based on authentication state
  */
 
-(function() {
+(function () {
     'use strict';
 
     /**
@@ -28,9 +28,9 @@
 
         // Listen for auth state changes
         Auth.onAuthStateChange((event, session) => {
-            if (event === 'SIGNED_IN' && session) {
+            if (session && (event === 'SIGNED_IN' || event === 'INITIAL_SESSION' || event === 'TOKEN_REFRESHED')) {
                 showAuthenticatedNav();
-            } else if (event === 'SIGNED_OUT') {
+            } else if (event === 'SIGNED_OUT' || !session) {
                 showUnauthenticatedNav();
             }
         });
@@ -41,8 +41,28 @@
      */
     async function showAuthenticatedNav() {
         const Auth = window.ExperienceLink?.Auth;
-        const profile = Auth ? (await Auth.getCurrentProfile()).data : null;
+        let profile = Auth ? (await Auth.getCurrentProfile()).data : null;
         const user = Auth ? (await Auth.getCurrentUser()).data : null;
+
+        // Check if this is an OAuth user without a profile (needs profile creation)
+        if (!profile && user) {
+            const pendingAccountType = localStorage.getItem('el_pending_account_type');
+            if (pendingAccountType && Auth.createProfile) {
+                // Create profile for OAuth user
+                const fullName = user.user_metadata?.full_name || user.email?.split('@')[0] || 'User';
+                const { data: newProfile } = await Auth.createProfile({
+                    userId: user.id,
+                    email: user.email,
+                    role: pendingAccountType,
+                    fullName: fullName
+                });
+                if (newProfile) {
+                    profile = newProfile;
+                }
+                // Clear the pending account type
+                localStorage.removeItem('el_pending_account_type');
+            }
+        }
 
         // Add email and full_name from auth user to profile for display purposes
         if (profile) {

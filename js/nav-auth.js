@@ -83,6 +83,9 @@
 
         // Update mobile menu
         updateMobileMenu(profile);
+
+        // Update role-based navigation links
+        updateRoleBasedLinks(profile);
     }
 
     /**
@@ -108,6 +111,9 @@
 
         // Reset mobile menu
         resetMobileMenu();
+
+        // Reset role-based navigation links
+        resetRoleBasedLinks();
     }
 
     /**
@@ -229,6 +235,53 @@
             <a href="login.html" class="btn btn-secondary w-full">Login</a>
             <a href="signup.html" class="btn btn-primary w-full">Get Started</a>
         `;
+    }
+
+    /**
+     * Update role-based navigation links visibility
+     * Hides "For Students" for companies and "For Companies" for students
+     * @param {Object} profile - User profile data
+     */
+    function updateRoleBasedLinks(profile) {
+        const role = profile?.role;
+
+        // Find the role-specific links
+        const forStudentsLinks = document.querySelectorAll('a.nav-link[href="projects.html"]');
+        const forCompaniesLinks = document.querySelectorAll('a.nav-link[href="companies.html"]');
+
+        // Filter to only get the "For Students" and "For Companies" text links
+        forStudentsLinks.forEach(link => {
+            if (link.textContent.trim() === 'For Students') {
+                link.style.display = role === 'company' ? 'none' : '';
+            }
+        });
+
+        forCompaniesLinks.forEach(link => {
+            if (link.textContent.trim() === 'For Companies') {
+                link.style.display = role === 'student' ? 'none' : '';
+            }
+        });
+    }
+
+    /**
+     * Reset role-based navigation links visibility
+     * Restores both "For Students" and "For Companies" links
+     */
+    function resetRoleBasedLinks() {
+        const forStudentsLinks = document.querySelectorAll('a.nav-link[href="projects.html"]');
+        const forCompaniesLinks = document.querySelectorAll('a.nav-link[href="companies.html"]');
+
+        forStudentsLinks.forEach(link => {
+            if (link.textContent.trim() === 'For Students') {
+                link.style.display = '';
+            }
+        });
+
+        forCompaniesLinks.forEach(link => {
+            if (link.textContent.trim() === 'For Companies') {
+                link.style.display = '';
+            }
+        });
     }
 
     /**

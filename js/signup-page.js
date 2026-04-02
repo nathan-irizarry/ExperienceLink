@@ -229,8 +229,8 @@
 
                 if (buttonText?.includes('google')) {
                     provider = 'google';
-                } else if (buttonText?.includes('github')) {
-                    provider = 'github';
+                } else if (buttonText?.includes('apple')) {
+                    provider = 'apple';
                 }
 
                 if (!provider) return;

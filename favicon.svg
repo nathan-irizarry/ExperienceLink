@@ -1,10 +1,10 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
-  <defs>
-    <linearGradient id="bolt" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" style="stop-color:#F5A623"/>
-      <stop offset="100%" style="stop-color:#E8940C"/>
-    </linearGradient>
-  </defs>
-  <rect width="32" height="32" rx="6" fill="#1C1917"/>
-  <path d="M17.5 4L7 18h8l-1.5 10L25 14h-8l1.5-10z" fill="url(#bolt)"/>
+  <rect width="32" height="32" rx="6" fill="#ffffff"/>
+  <g fill="none" stroke="#4d6ce7" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+    <!-- First link -->
+    <path d="M13 19l-2 2a4 4 0 01-5.66-5.66l2-2"/>
+    <path d="M19 13l2-2a4 4 0 015.66 5.66l-2 2"/>
+    <!-- Connecting line -->
+    <line x1="12" y1="20" x2="20" y2="12"/>
+  </g>
 </svg>

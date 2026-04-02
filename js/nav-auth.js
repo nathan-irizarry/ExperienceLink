@@ -6,6 +6,62 @@
 (function () {
     'use strict';
 
+    const AUTH_CACHE_KEY = 'el_auth_cache';
+
+    /**
+     * Apply cached auth state immediately (synchronous)
+     * This prevents the flash of unauthenticated content
+     */
+    function applyCachedAuthState() {
+        try {
+            const cached = localStorage.getItem(AUTH_CACHE_KEY);
+            if (cached) {
+                const { isAuth, profile } = JSON.parse(cached);
+                if (isAuth) {
+                    // Immediately hide login/signup links
+                    const loginLinks = document.querySelectorAll('a[href="login.html"]');
+                    const signupLinks = document.querySelectorAll('a[href="signup.html"]');
+                    loginLinks.forEach(link => link.style.display = 'none');
+                    signupLinks.forEach(link => link.style.display = 'none');
+
+                    // Immediately hide role-based links
+                    if (profile?.role) {
+                        const forStudentsLinks = document.querySelectorAll('a.nav-link[href="projects.html"]');
+                        const forCompaniesLinks = document.querySelectorAll('a.nav-link[href="companies.html"]');
+
+                        forStudentsLinks.forEach(link => {
+                            if (link.textContent.trim() === 'For Students') {
+                                link.style.display = profile.role === 'company' ? 'none' : '';
+                            }
+                        });
+                        forCompaniesLinks.forEach(link => {
+                            if (link.textContent.trim() === 'For Companies') {
+                                link.style.display = profile.role === 'student' ? 'none' : '';
+                            }
+                        });
+                    }
+                }
+            }
+        } catch (e) {
+            // Ignore cache errors
+        }
+    }
+
+    /**
+     * Cache auth state for faster page loads
+     */
+    function cacheAuthState(isAuth, profile) {
+        try {
+            if (isAuth) {
+                localStorage.setItem(AUTH_CACHE_KEY, JSON.stringify({ isAuth, profile }));
+            } else {
+                localStorage.removeItem(AUTH_CACHE_KEY);
+            }
+        } catch (e) {
+            // Ignore cache errors
+        }
+    }
+
     /**
      * Initialize navigation auth state
      * Updates the navigation to show appropriate links based on auth status
@@ -35,6 +91,9 @@
             }
         });
     }
+
+    // Apply cached state immediately (before DOM ready)
+    applyCachedAuthState();
 
     /**
      * Show navigation for authenticated users
@@ -106,12 +165,17 @@
 
         // Update role-based navigation links
         updateRoleBasedLinks(profile);
+
+        // Cache auth state for faster page loads
+        cacheAuthState(true, profile);
     }
 
     /**
      * Show navigation for unauthenticated users
      */
     function showUnauthenticatedNav() {
+        // Clear auth cache
+        cacheAuthState(false, null);
         // Show login/signup links
         const loginLinks = document.querySelectorAll('a[href="login.html"]');
         const signupLinks = document.querySelectorAll('a[href="signup.html"]');
